@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block title %}Annotator{% endblock %} {% block content %}
+
+<h1 align="center">Language Annotation Tool</h1>
+    <br />
+    <br />
+<form method="POST">
+  <div align="center">
+      <h5 align="center">Which instruction would you give to the robot to complete the following task?</h5>
+      <img src="{{ url_for('static', filename='images/'+content) }}" width="500" height="350">
+       <br />
+      <p><input type="text" name="lang_ann" placeholder="Enter the instruction"></p>
+      <input type="submit" value="Submit", name="submit">
+      <input type="submit" value="End!", name="done">
+  </div>
+    <br />
+  <div align="center">
+      <label for="file">Progress</label>
+      <p><progress id="file" value={{ progress }} max="100"></progress></p>
+  </div>
+</form>
+{% endblock %}
