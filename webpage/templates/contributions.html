@@ -1,0 +1,45 @@
+{% extends "base.html" %} {% block title %}Annotator{% endblock %} {% block content %}
+
+<form method="POST">
+  <div>
+  <br />
+  <h5 align="center">Hi {{ user.first_name }} !</h5>
+  <br />
+      <h6 align="center">You have annotated the <b>{{ user_progress }}</b> % of the collected dataset</h6>
+      <br />
+    <ul class="list-group list-group-flush" id="lang_ann"></ul>
+
+        <h5 align="left" class="text-primary">Today</h5><br />
+        {% for annotation in annotations %}
+              {% if annotation.date.month == time.month %}
+                {% if time.day - annotation.date.day < 1  %}
+                    <li align="center" class="list-group-item"><i>" {{ annotation.lang_ann }} "</i>
+                    <input type="submit" name="{{ annotation.rawdata_id }}" value="Update" style="float: right;"></input>
+                    </li>
+                {% endif %}
+              {% endif %}
+        {% endfor %}
+
+        <br />
+      <h5 align="left" class="text-primary">Last Week</h5><br />
+            {% for annotation in annotations %}
+                {% if annotation.date.month == time.month %}
+                    {% if time.day - annotation.date.day >= 1  %}
+                        <li align="center" class="list-group-item"><i>" {{ annotation.lang_ann }} "</i>
+                        <input type="submit" name="{{ annotation.rawdata_id }}" value="Update" style="float: right;"></input>
+                        </li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+         <br />
+       <h5 align="left" class="text-primary">Last Month</h5><br />
+            {% for annotation in annotations %}
+                {% if annotation.date.month < time.month %}
+                    <li class="list-group-item"><i>" {{ annotation.lang_ann }} "</i>
+                    <input type="submit" name="{{ annotation.rawdata_id }}" value="Update" style="float: right;"></input>
+                    </li>
+                {% endif %}
+            {% endfor %}
+  </div>
+</form>
+{% endblock %}

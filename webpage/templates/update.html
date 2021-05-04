@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block title %}Annotator{% endblock %} {% block content %}
+
+<h1 align="center">Language Annotation Tool</h1>
+    <br />
+    <br />
+<form method="POST">
+  <div align="center">
+      <h5 align="center">Update annotation</h5>
+
+      <img src="{{ url_for('static', filename='images/'+content) }}" width="500" height="350">
+       <br />
+      <p>Current language annotation: {{ lang_ann }}</p>
+      <p><input type="text" name="lang_ann" placeholder="Enter the instruction"></p>
+      <input type="submit" value="Update", name="update">
+      <input type="submit" value="Quite!", name="quite">
+  </div>
+</form>
+{% endblock %}

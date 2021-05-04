@@ -22,7 +22,11 @@ def home():
                                              end_frame=data['info']['indx'][i][1])
                     db.session.add(new_data_point)
                 db.session.commit()
-        return render_template('home.html', user=current_user)
+        empty_ann = LangData.query.filter_by(lang_ann='')
+        empty_ann.filter_by(user_id=current_user.id).delete()
+        db.session.commit()
+        progress = round(float(LangData.query.count()) / float(RawData.query.count()) * 100)
+        return render_template('home.html', user=current_user, progress=progress)
 
 
 @views.route("/completed")
@@ -30,5 +34,6 @@ def home():
 def completed():
     flash("\nData collection completed successfully!\n Congratulations!")
     return render_template('completed.html', user=current_user)
+
 
 

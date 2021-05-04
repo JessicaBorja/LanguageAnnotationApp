@@ -15,4 +15,10 @@
             <button type="submit" class="btn btn-primary">Let's Go!</button>
         </div>
     </form>
+    <div align="center">
+    <br/><br/>
+    <h3> Completed</h3>
+        <h4 class="text-success"><b>{{ progress }} %</b></h4>
+        <progress id="file" value={{ progress }} max="100"></progress>
+    </div>
 {% endblock %}
