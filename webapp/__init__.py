@@ -15,15 +15,15 @@ def create_app():
     db.init_app(app)
 
 
-    from .views import views
-    from .auth import auth
-    from .annotator import annotator
+    from .helpers.views import views
+    from .helpers.auth import auth
+    from .helpers.annotator import annotator
 
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
     app.register_blueprint(annotator, url_prefix='/')
 
-    from .models import User, RawData, LangData
+    from .helpers.models import User
 
     create_database(app)
 

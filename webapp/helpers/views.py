@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session
 from flask_login import login_required, current_user
-from . import db
-from .models import RawData, LangData
+from webapp import db
+from .models import RawData, LangAnn, Sequences
 import json
 
 
@@ -14,8 +14,8 @@ def home():
     if request.method == 'POST':
         return redirect(url_for('annotator.annotate', user=current_user))
     else:
-        if RawData.query.count() < 1:
-            with open('/home/mikel/PycharmProjects/flaskWebpage/webpage/static/images/dataset.json') as json_file:
+        if Sequences.query.count() < 1:
+            with open('./webpage/static/images/dataset.json') as json_file:
                 data = json.load(json_file)
                 for i, img_dir in enumerate(data['images']):
                     new_data_point = RawData(img_name=img_dir, start_frame=data['info']['indx'][i][0],
