@@ -3,7 +3,7 @@ from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from webapp import db
 from flask_login import login_user, login_required, logout_user, current_user
-from .models import LangData
+from .models import LangAnn
 
 auth = Blueprint('auth', __name__)
 
@@ -11,14 +11,14 @@ auth = Blueprint('auth', __name__)
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        first_name = request.form.get('first_name')
+        user_name = request.form.get('user_name')
         password = request.form.get('password')
 
-        user = User.query.filter_by(first_name=first_name).first()
+        user = User.query.filter_by(user_name=user_name).first()
         if user:
             if check_password_hash(user.password, password):
                 flash('Logged in successfully!', category='success')
-                session["user"] = first_name
+                session["user"] = user_name
                 login_user(user, remember=False)
                 return redirect(url_for('views.home'))
             else:
@@ -32,7 +32,7 @@ def login():
 @login_required
 def logout():
 
-    annotation_in_progress = LangData.query.filter_by(lang_ann='')
+    annotation_in_progress = LangAnn.query.filter_by(lang_ann='')
     annotation_in_progress.filter_by(user_id=current_user.id).delete()
     db.session.commit()
     logout_user()
@@ -43,25 +43,25 @@ def logout():
 def sign_up():
     if request.method == 'POST':
 
-        first_name = request.form.get('first_name')
+        user_name = request.form.get('user_name')
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
 
-        user = User.query.filter_by(first_name=first_name).first()
+        user = User.query.filter_by(user_name=user_name).first()
         num_usrs = User.query.count()
         if num_usrs > 5:
             flash("Maximum number of users registered!", category="error")
             return redirect(url_for('views.home'))
         if user:
             flash("This user account already exists! Try another username", category="error")
-        elif len(first_name) < 2:
-            flash('First name must be greater than 1 character.', category='error')
+        elif len(user_name) < 2:
+            flash('Username must be greater than 1 character.', category='error')
         elif password1 != password2:
             flash('Passwords don\'t match.', category='error')
         elif len(password1) < 7:
             flash('Password must be at least 7 characters.', category='error')
         else:
-            new_user = User(first_name=first_name, password=generate_password_hash(
+            new_user = User(user_name=user_name, password=generate_password_hash(
                 password1, method='sha256'))
             db.session.add(new_user)
             db.session.commit()
