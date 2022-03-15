@@ -13,7 +13,7 @@ Annotator
   <div align="center">
     <h5 align="center">Which instruction would you give to the robot to complete the following task?</h5>
     <video controls="" autoplay="" name="media" style="margin: 1em 0" id="video">
-      <source id="video_src" src="{{video}}" type="video/webm">
+      <source id="video_src" src="{{url_for('static',filename='tmp/' +content )}}" type="video/webm">
     </video>
     <br />
     <div class="flex_column">
@@ -33,8 +33,8 @@ Annotator
         </div>
       </div>
       <div class="flex_row" style="margin:1em 0 0 0">
-        <input class="btn btn-secondary" type="submit" value="End!">
-        <input class="btn btn-primary" type="submit" value="Next">
+        <input class="btn btn-secondary" type="submit" name="submit_button" value="end">
+        <input class="btn btn-primary" type="submit" name="submit_button" value="next">
       </div>
     </div>
   </div>
@@ -47,24 +47,4 @@ Annotator
 
 {% endblock %}
 
-{% block script %}
-<script>
-  function getVideo(){
-    $.ajax({
-        type: 'GET',
-        cache: false,
-        url: "{{url_for('annotator.get_video')}}", 
-        success: function(resp){
-          console.log(resp);
-          console.log(resp.video);
-          $('#video_src').attr('src', '/static/images/tmp.webM');
-          $('#video')[0].load()
-        }
-    }); 
-  }
 
-  $(document).ready(function(){
-    getVideo();
-  });       
-</script>
-{% endblock %}

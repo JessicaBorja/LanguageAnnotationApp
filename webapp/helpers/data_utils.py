@@ -11,7 +11,9 @@ import io
 class DataManager:
     def __init__(self, data_path, n_frames, grip_pt_h=False) -> None:
         super().__init__()
-        self.media_dir = './webapp/static/images/'
+        self.tmp_dir = './webapp/static/tmp/'
+        os.makedirs(self.tmp_dir, exist_ok=True)
+        self.save_data_dir = './webapp/static/'
         self.data_path = data_path
         self.n_frames = n_frames
         self.grip_pt_h = grip_pt_h
@@ -25,7 +27,7 @@ class DataManager:
         self._c = 1
 
     def read_json(self):
-        data_filename = os.path.join(self.media_dir, 'data.json')
+        data_filename = os.path.join(self.save_data_dir, 'data.json')
         data = None
         if os.path.isfile(data_filename):
             with open(data_filename, "r") as read_file:
@@ -35,34 +37,15 @@ class DataManager:
         return data
 
     def save_json(self, data):
-        data_filename = os.path.join(self.media_dir, 'data.json')
+        data_filename = os.path.join(self.save_data_dir, 'data.json')
         with open(data_filename, 'w') as fout:
             json.dump(data , fout, indent=2)
 
-    def save_gif(self, img_seq, img_name):
-        img_path = '%s/%s.gif' % (self.media_dir, img_name)
-        imageio.mimsave(img_path, img_seq, format='GIF', duration=1)
+    def create_tmp_video(self, start, end, dir, id):
+        video_tag = "tmp_%d.webM" % id
+        # if(os.path.isfile(os.path.join(self.tmp_dir, video_tag))):
+        #     return video_tag
 
-    def get_gif(self, data_idx):
-        seq = self.data[data_idx]
-        start, end = seq['indx']
-        start_idx = self.filename_to_idx(start)
-        end_idx = self.filename_to_idx(end)
-        seq_imgs = []
-        for i in range(start_idx, end_idx + 1):
-            frame_i = self.idx_to_filename(i)
-            filename = os.path.join(seq['dir'], frame_i)
-            img = self.extract_img(filename)
-            seq_imgs.append(img)
-        self.save_gif(seq_imgs,"test")
-        
-        data = io.BytesIO()
-        encoded_img_data = base64.b64encode(data.getvalue())
-        return encoded_img_data
-
-    def create_tmp_video(self, start, end, dir):
-        # seq = self.data[data_idx]
-        # start, end = seq['indx']
         start_idx = self.filename_to_idx(start)
         end_idx = self.filename_to_idx(end)
         seq_imgs = []
@@ -71,15 +54,13 @@ class DataManager:
             filename = os.path.join(dir, frame_i)
             img = self.extract_img(filename)
             seq_imgs.append(img)
-        self.make_video(seq_imgs, video_name="tmp")
-        # video_tag = "tmp_%d" % self._c
-        # self.make_video(seq_imgs, video_name=video_tag)
-        # self._c += 1
+        # self.make_video(seq_imgs, video_name="tmp")
+        self.make_video(seq_imgs, video_name=video_tag)
+        return video_tag
    
     def make_video(self, seq_imgs, fps=80, video_name="v"):
-        video_path = '%s/%s.webM' % (self.media_dir, video_name)
+        video_path = os.path.join(self.tmp_dir, video_name)
         w, h = seq_imgs[0].shape[:2]
-        # fourcc = cv2.VideoWriter_fourcc(*'H264')
         fourcc = cv2.VideoWriter_fourcc('V','P','8','0')
         video = cv2.VideoWriter(
                     video_path,
@@ -90,21 +71,6 @@ class DataManager:
             video.write(img[:, :, ::-1])
         cv2.destroyAllWindows()
         video.release()
-
-    def create_add_videos(self):
-        c = 0
-        for seq in self.data:
-            start, end = seq['indx']
-            start_idx = self.filename_to_idx(start)
-            end_idx = self.filename_to_idx(end)
-            seq_imgs = []
-            for i in range(start_idx, end_idx + 1):
-                frame_i = self.idx_to_filename(i)
-                filename = os.path.join(seq['dir'], frame_i)
-                img = self.extract_img(filename)
-                seq_imgs.append(img)
-            self.make_video(seq_imgs, video_name="tmp%04d.mp4" % c)
-        return
 
     def extract_img(self, filename):
         data = np.load(filename, allow_pickle=True)
@@ -139,11 +105,14 @@ class DataManager:
             for dir in time_folder:
                 files = glob.glob("%s/**/frame_*.npz" %dir, recursive=True)
                 files.sort()
+                indices = range(0, len(files) - self.n_frames, self.n_frames//2)
+                files = [files[i] for i in indices]
                 files = files[:-self.n_frames]
                 initial_frames.extend(files)
         
         # Select n_seq random sequences
-        initial_frames = np.random.choice(initial_frames, size=self.n_seq, replace=False)
+        n_seq = min(len(initial_frames), self.n_seq)
+        initial_frames = np.random.choice(initial_frames, size=n_seq, replace=False)
         frames_info = {}
         _data = []
         for frame_dir in initial_frames:

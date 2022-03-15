@@ -1,0 +1,1202 @@
+[
+  {
+    "indx": [
+      "frame_008896.npz",
+      "frame_009024.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_002048.npz",
+      "frame_002176.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_000064.npz",
+      "frame_000192.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_013888.npz",
+      "frame_014016.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_014656.npz",
+      "frame_014784.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_003840.npz",
+      "frame_003968.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_000768.npz",
+      "frame_000896.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_011392.npz",
+      "frame_011520.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_002176.npz",
+      "frame_002304.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_004160.npz",
+      "frame_004288.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_002496.npz",
+      "frame_002624.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_001600.npz",
+      "frame_001728.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_001344.npz",
+      "frame_001472.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_004480.npz",
+      "frame_004608.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_015616.npz",
+      "frame_015744.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_013504.npz",
+      "frame_013632.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_000832.npz",
+      "frame_000960.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_014208.npz",
+      "frame_014336.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_013376.npz",
+      "frame_013504.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_016256.npz",
+      "frame_016384.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_001856.npz",
+      "frame_001984.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_016192.npz",
+      "frame_016320.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_004352.npz",
+      "frame_004480.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_002688.npz",
+      "frame_002816.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_010816.npz",
+      "frame_010944.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_002496.npz",
+      "frame_002624.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_012096.npz",
+      "frame_012224.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_003456.npz",
+      "frame_003584.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_003200.npz",
+      "frame_003328.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_000768.npz",
+      "frame_000896.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_012992.npz",
+      "frame_013120.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_005632.npz",
+      "frame_005760.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_003776.npz",
+      "frame_003904.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_003648.npz",
+      "frame_003776.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_000192.npz",
+      "frame_000320.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_2",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_000960.npz",
+      "frame_001088.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_004672.npz",
+      "frame_004800.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_000448.npz",
+      "frame_000576.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_003584.npz",
+      "frame_003712.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_003392.npz",
+      "frame_003520.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_002624.npz",
+      "frame_002752.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_014720.npz",
+      "frame_014848.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_010048.npz",
+      "frame_010176.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_005248.npz",
+      "frame_005376.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_009216.npz",
+      "frame_009344.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_013312.npz",
+      "frame_013440.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_015296.npz",
+      "frame_015424.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_001024.npz",
+      "frame_001152.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_001024.npz",
+      "frame_001152.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_002688.npz",
+      "frame_002816.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_001472.npz",
+      "frame_001600.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_015872.npz",
+      "frame_016000.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_007936.npz",
+      "frame_008064.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_002176.npz",
+      "frame_002304.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_015360.npz",
+      "frame_015488.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_003520.npz",
+      "frame_003648.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_013184.npz",
+      "frame_013312.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_003968.npz",
+      "frame_004096.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_015424.npz",
+      "frame_015552.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_011200.npz",
+      "frame_011328.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_011520.npz",
+      "frame_011648.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_011456.npz",
+      "frame_011584.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_000960.npz",
+      "frame_001088.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_002944.npz",
+      "frame_003072.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_002752.npz",
+      "frame_002880.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_007744.npz",
+      "frame_007872.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_005888.npz",
+      "frame_006016.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_009152.npz",
+      "frame_009280.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_008960.npz",
+      "frame_009088.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_012928.npz",
+      "frame_013056.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_000128.npz",
+      "frame_000256.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_2",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_003456.npz",
+      "frame_003584.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_000640.npz",
+      "frame_000768.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_001280.npz",
+      "frame_001408.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_001920.npz",
+      "frame_002048.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_002816.npz",
+      "frame_002944.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_011712.npz",
+      "frame_011840.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_003968.npz",
+      "frame_004096.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_000704.npz",
+      "frame_000832.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_006720.npz",
+      "frame_006848.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_002176.npz",
+      "frame_002304.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_012800.npz",
+      "frame_012928.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_000192.npz",
+      "frame_000320.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_01_09/19-23-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_009024.npz",
+      "frame_009152.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_002112.npz",
+      "frame_002240.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_002496.npz",
+      "frame_002624.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_006528.npz",
+      "frame_006656.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_006208.npz",
+      "frame_006336.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_001920.npz",
+      "frame_002048.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_011328.npz",
+      "frame_011456.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_008704.npz",
+      "frame_008832.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_002304.npz",
+      "frame_002432.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_001472.npz",
+      "frame_001600.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_003200.npz",
+      "frame_003328.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_006592.npz",
+      "frame_006720.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_005184.npz",
+      "frame_005312.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_011584.npz",
+      "frame_011712.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_001536.npz",
+      "frame_001664.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_002880.npz",
+      "frame_003008.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_003072.npz",
+      "frame_003200.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_000512.npz",
+      "frame_000640.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_001280.npz",
+      "frame_001408.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_008256.npz",
+      "frame_008384.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_004288.npz",
+      "frame_004416.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_014016.npz",
+      "frame_014144.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_003136.npz",
+      "frame_003264.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_012416.npz",
+      "frame_012544.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_000128.npz",
+      "frame_000256.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_014144.npz",
+      "frame_014272.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_008320.npz",
+      "frame_008448.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_009600.npz",
+      "frame_009728.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_003648.npz",
+      "frame_003776.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_000448.npz",
+      "frame_000576.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_010496.npz",
+      "frame_010624.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_003712.npz",
+      "frame_003840.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_015680.npz",
+      "frame_015808.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_008832.npz",
+      "frame_008960.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_014272.npz",
+      "frame_014400.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_014912.npz",
+      "frame_015040.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_008448.npz",
+      "frame_008576.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_002752.npz",
+      "frame_002880.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_013568.npz",
+      "frame_013696.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_000192.npz",
+      "frame_000320.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_004032.npz",
+      "frame_004160.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_002816.npz",
+      "frame_002944.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_015168.npz",
+      "frame_015296.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_000000.npz",
+      "frame_000128.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_010176.npz",
+      "frame_010304.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_003904.npz",
+      "frame_004032.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_001728.npz",
+      "frame_001856.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_011008.npz",
+      "frame_011136.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_009536.npz",
+      "frame_009664.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_014336.npz",
+      "frame_014464.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_003712.npz",
+      "frame_003840.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_014784.npz",
+      "frame_014912.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_002880.npz",
+      "frame_003008.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_003520.npz",
+      "frame_003648.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_005440.npz",
+      "frame_005568.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_003456.npz",
+      "frame_003584.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_017216.npz",
+      "frame_017344.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_005824.npz",
+      "frame_005952.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_003008.npz",
+      "frame_003136.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_016064.npz",
+      "frame_016192.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_001408.npz",
+      "frame_001536.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_014848.npz",
+      "frame_014976.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_009728.npz",
+      "frame_009856.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_000576.npz",
+      "frame_000704.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_002880.npz",
+      "frame_003008.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/tabletop_plastic_boxes/ep_1",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_003840.npz",
+      "frame_003968.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/12-12-58",
+    "n_frames": 128
+  },
+  {
+    "indx": [
+      "frame_004224.npz",
+      "frame_004352.npz"
+    ],
+    "dir": "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop/teleop_real_08_09/13-14-56",
+    "n_frames": 128
+  }
+]
