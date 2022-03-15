@@ -11,6 +11,7 @@ import io
 class DataManager:
     def __init__(self, data_path, n_frames, grip_pt_h=False) -> None:
         super().__init__()
+        self.media_dir = './webapp/static/images/'
         self.data_path = data_path
         self.n_frames = n_frames
         self.grip_pt_h = grip_pt_h
@@ -24,7 +25,7 @@ class DataManager:
         self._c = 1
 
     def read_json(self):
-        data_filename = './webapp/static/images/data.json'
+        data_filename = os.path.join(self.media_dir, 'data.json')
         data = None
         if os.path.isfile(data_filename):
             with open(data_filename, "r") as read_file:
@@ -34,12 +35,12 @@ class DataManager:
         return data
 
     def save_json(self, data):
-        with open('./webapp/static/images/data.json', 'w') as fout:
+        data_filename = os.path.join(self.media_dir, 'data.json')
+        with open(data_filename, 'w') as fout:
             json.dump(data , fout, indent=2)
 
     def save_gif(self, img_seq, img_name):
-        img_dir = './webapp/static/images'
-        img_path = '%s/%s.gif' % (img_dir, img_name)
+        img_path = '%s/%s.gif' % (self.media_dir, img_name)
         imageio.mimsave(img_path, img_seq, format='GIF', duration=1)
 
     def get_gif(self, data_idx):
@@ -76,8 +77,7 @@ class DataManager:
         # self._c += 1
    
     def make_video(self, seq_imgs, fps=80, video_name="v"):
-        media_dir = './webapp/static/images'
-        video_path = '%s/%s.webM' % (media_dir, video_name)
+        video_path = '%s/%s.webM' % (self.media_dir, video_name)
         w, h = seq_imgs[0].shape[:2]
         # fourcc = cv2.VideoWriter_fourcc(*'H264')
         fourcc = cv2.VideoWriter_fourcc('V','P','8','0')

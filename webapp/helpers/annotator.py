@@ -3,7 +3,7 @@ from flask import Blueprint, render_template, request, flash, redirect, url_for
 from flask_login import login_required, current_user
 from .models import Sequences, LangAnn
 from webapp import db, data_manager, tasks
-
+import json
 
 annotator = Blueprint('annotator', __name__)  # set up blueprint
 
@@ -44,22 +44,11 @@ def annotate():
     progress = float(LangAnn.query.count()-1)/float(Sequences.query.count())*100
     data_manager.create_tmp_video(seq.start_frame, seq.end_frame, seq.dir)
     return render_template("annotate.html",
-                            content="tmp.webM",
                             progress=progress,
                             tasks=tasks,
                             user=current_user)
 
-# @app.route('/')
-# def index():
-#     return render_template('index.html')
-
-# def gen(camera):
-#     while True:
-#         frame = camera.get_frame()
-#         yield (b'--frame\r\n'
-#                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
-
-# @app.route('/video_feed')
-# def video_feed():
-#     return Response(gen(Camera()),
-#                     mimetype='multipart/x-mixed-replace; boundary=frame')
+@annotator.route('/get_video', methods = ['GET'])
+def get_video():
+    video = 'static/images/tmp.webM'
+    return json.dumps({'video':video}) 
