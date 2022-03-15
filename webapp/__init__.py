@@ -2,10 +2,26 @@ from flask import Flask, session
 from flask_sqlalchemy import SQLAlchemy
 from os import path
 from flask_login import LoginManager
+from .helpers.data_utils import DataManager
+import yaml
 
 db = SQLAlchemy()
 DB_NAME = "database.db"
 
+def read_tasks():
+    with open("./webapp/helpers/tasks.yaml", "r") as stream:
+        try:
+            tasks = yaml.safe_load(stream)
+        except yaml.YAMLError as exc:
+            print(exc)
+    return tasks
+
+# Loading videos from
+tasks = read_tasks()
+data_path = "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop"
+data_manager = DataManager(data_path,
+                            n_frames=128,
+                            grip_pt_h=False)
 
 def create_app():
     app = Flask(__name__)

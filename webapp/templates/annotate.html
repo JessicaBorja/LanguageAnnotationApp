@@ -1,21 +1,53 @@
 {% extends "base.html" %} {% block title %}Annotator{% endblock %} {% block content %}
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/general.css') }}">
 <h1 align="center">Language Annotation Tool</h1>
-    <br />
-    <br />
+<br />
+<br />
 <form method="POST">
   <div align="center">
-      <h5 align="center">Which instruction would you give to the robot to complete the following task?</h5>
-      <img src="{{ url_for('static', filename='images/'+content) }}" width="500" height="350">
-       <br />
-      <p><input type="text" name="lang_ann" placeholder="Enter the instruction"></p>
-      <input type="submit" value="Submit", name="submit">
-      <input type="submit" value="End!", name="done">
-  </div>
+    <h5 align="center">Which instruction would you give to the robot to complete the following task?</h5>
+    <video controls="" autoplay="" name="media" style="margin: 1em 0" id="video">
+      <source src="{{url_for('static', filename='images/' +content)}}" type="video/webm">
+    </video>
     <br />
+    <div class="flex_column">
+      <div class="flex_row">
+        <div class="flex_column" style="margin: 0.5em 2em 0 2em">
+          <p>Enter the instruction</p>
+          <input required type="text" name="lang_ann" placeholder="Enter the instruction">
+        </div>
+        <div class="flex_column" style="margin:0.5em 0 0 2em">
+          <p>Select the task that is being completed</p>
+          <select name=task method="GET" action="/" required>
+            <option disabled selected value hidden> -- select an option -- </option>
+            {% for t, captions in tasks.items() %}
+            <option value="{{t}}">{{captions[0]}}</option>"
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="flex_row" style="margin:1em 0 0 0">
+        <input class="btn btn-secondary" type="submit" value="End!">
+        <input class="btn btn-primary" type="submit" value="Next">
+      </div>
+    </div>
+  </div>
+  <br />
   <div align="center">
-      <label for="file">Progress</label>
-      <p><progress id="file" value={{ progress }} max="100"></progress></p>
+    <label for="file">Progress</label>
+    <p><progress id="file" value={{ progress }} max="100"></progress></p>
   </div>
 </form>
+<script>
+  function loadVideo() {
+    var video = document.getElementById("video")
+    video.load()
+  }
+
+  $(document).ready(function () {
+    setTimeout(loadVideo, 1000);
+  });       
+</script>
 {% endblock %}

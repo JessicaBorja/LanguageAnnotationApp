@@ -10,10 +10,10 @@ class User(db.Model, UserMixin):
 
 class Sequences(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    img_name = db.Column(db.String(150), unique=True)
+    dir = db.Column(db.String(250))
     n_frames = db.Column(db.Integer)
-    start_frame = db.Column(db.Integer)
-    end_frame = db.Column(db.Integer)
+    start_frame = db.Column(db.String(50))
+    end_frame = db.Column(db.String(50))
 
 class LangAnn(db.Model):
     id = db.Column(db.Integer, primary_key=True)

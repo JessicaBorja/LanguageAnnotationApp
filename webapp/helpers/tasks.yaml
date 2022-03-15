@@ -1,0 +1,17 @@
+open_drawer:
+  - "Opening the drawer"
+
+close_drawer:
+  - "Closing the drawer"
+
+move_slide_left:
+  - "Moving sliding door to the left"
+
+move_slide_right:
+  - "Moving sliding door to the left"
+
+move_freespace:
+  - "Move"
+
+grasp_obj:
+  - "Grasping object"

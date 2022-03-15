@@ -9,5 +9,8 @@ setup(name='webapp',
         "flask_sqlalchemy",
         "flask_login",
         "flask",
+        "pyaml",
+        "opencv-python",
+        "Pillow",
         ]
       )
