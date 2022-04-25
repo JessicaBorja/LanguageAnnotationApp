@@ -2,6 +2,8 @@ import argparse
 import glob
 import json
 import os
+from pathlib import Path
+import random
 
 import cv2
 import numpy as np
@@ -10,27 +12,26 @@ import numpy as np
 class DataManager:
     def __init__(self, data_root: str, n_frames: int, grip_pt_h: bool = False) -> None:
         super().__init__()
-        self.media_dir = './webapp/static/'
+        self.media_dir = "./webapp/static/"
         for cam in ["gripper", "static"]:
             make_dir = os.path.join(self.media_dir, "%s_cam" % cam)
             os.makedirs(make_dir, exist_ok=True)
-        self.save_data_dir = './webapp/static/'
-        self.data_path = data_path
+        self.save_data_dir = Path("./webapp/static/")
         self.n_frames = n_frames
         self.grip_pt_h = grip_pt_h
-        self.n_seq = 150
+        self.n_seq_percentage = 0.10
         _json_data = self.read_json()
         if _json_data is None:
-            self.data = self.read_data(data_root)
+            self.data = self.read_data_preprocessed(Path(data_root))
         else:
             self.data = _json_data
         # self.create_add_videos()
         self._c = 1
 
     def read_json(self):
-        data_filename = os.path.join(self.save_data_dir, "data.json")
+        data_filename = self.save_data_dir / "data.json"
         data = None
-        if os.path.isfile(data_filename):
+        if data_filename.is_file():
             with open(data_filename, "r") as read_file:
                 data = json.load(read_file)
         else:
@@ -56,11 +57,11 @@ class DataManager:
             imgs = self.extract_imgs(filename)
             gripper_imgs.append(imgs["gripper"])
             static_imgs.append(imgs["static"])
-        
+
         self.make_video(gripper_imgs, video_name=video_tag, cam="gripper")
         self.make_video(static_imgs, video_name=video_tag, cam="static")
         return video_tag
-   
+
     def make_video(self, seq_imgs, fps=80, video_name="v", cam="static"):
         folder_path = os.path.join(self.media_dir, "%s_cam" % cam)
         video_path = os.path.join(folder_path, video_name)
@@ -92,54 +93,13 @@ class DataManager:
         return "frame_%06d.npz" % idx
 
     def read_data_unprocessed(self, play_data_path):
-        '''
-            play_data_path -> day -> time
-            _data:(list)
-                - {'indx': [start_filename, end_filename],
-                   'dir': directory of previous files,
-                   'n_frames': end_frame - start_frame}
-        '''
-        # Get all posible initial_frames
-        initial_frames = []
-        date_folder = glob.glob("%s/*" %play_data_path, recursive=True)
-        for path in date_folder:
-            data_path = os.path.basename(path)
-
-            # Get files in subdirectory
-            time_folder = glob.glob("%s/*" % path, recursive=True)
-            for dir in time_folder:
-                files = glob.glob("%s/**/frame_*.npz" %dir, recursive=True)
-                files.sort()
-                indices = range(0, len(files) - self.n_frames, self.n_frames//2)
-                files = [files[i] for i in indices]
-                files = files[:-self.n_frames]
-                initial_frames.extend(files)
-        
-        # Select n_seq random sequences
-        n_seq = min(len(initial_frames), self.n_seq)
-        initial_frames = np.random.choice(initial_frames, size=n_seq, replace=False)
-        frames_info = {}
-        _data = []
-        for frame_dir in initial_frames:
-            head, start_filename = os.path.split(frame_dir)
-            frame_idx = self.filename_to_idx(start_filename)
-            end_frame_idx = frame_idx + self.n_frames
-            end_filename = self.idx_to_filename(end_frame_idx)
-            frames_info = {'indx': [start_filename, end_filename],
-                           'dir': head,
-                           'n_frames': self.n_frames}
-            _data.append(frames_info)
-        self.save_json(_data)
-        return _data
-
-    def read_data_preprocessed(self, play_data_path):
-        '''
-            play_data_path -> day -> time
-            _data:(list)
-                - {'indx': [start_filename, end_filename],
-                   'dir': directory of previous files,
-                   'n_frames': end_frame - start_frame}
-        '''
+        """
+        play_data_path -> day -> time
+        _data:(list)
+            - {'indx': [start_filename, end_filename],
+               'dir': directory of previous files,
+               'n_frames': end_frame - start_frame}
+        """
         # Get all posible initial_frames
         initial_frames = []
         date_folder = glob.glob("%s/*" % play_data_path, recursive=True)
@@ -167,6 +127,35 @@ class DataManager:
             end_frame_idx = frame_idx + self.n_frames
             end_filename = self.idx_to_filename(end_frame_idx)
             frames_info = {"indx": [start_filename, end_filename], "dir": head, "n_frames": self.n_frames}
+            _data.append(frames_info)
+        self.save_json(_data)
+        return _data
+
+    def read_data_preprocessed(self, play_data_path):
+        """
+        play_data_path -> day -> time
+        _data:(list)
+            - {'indx': [start_filename, end_filename],
+               'dir': directory of previous files,
+               'n_frames': end_frame - start_frame}
+        """
+        # Get all posible initial_frames
+        initial_frames = []
+        ep_start_end_ids = np.load(play_data_path / "ep_start_end_ids.npy").tolist()
+        # iterate over each episode
+        for ep in ep_start_end_ids:
+            indices = list(range(ep[0], ep[1] - self.n_frames, self.n_frames // 2))
+            # Select n_seq random sequences
+            rand_seqs = sorted(random.sample(indices, round(len(indices) * self.n_seq_percentage)))
+            initial_frames.extend(rand_seqs)
+
+        frames_info = {}
+        _data = []
+        for start_id in initial_frames:
+            start_filename = self.idx_to_filename(start_id)
+            end_frame_idx = start_id + self.n_frames
+            end_filename = self.idx_to_filename(end_frame_idx)
+            frames_info = {"indx": [start_filename, end_filename], "dir": play_data_path, "n_frames": self.n_frames}
             _data.append(frames_info)
         self.save_json(_data)
         return _data
