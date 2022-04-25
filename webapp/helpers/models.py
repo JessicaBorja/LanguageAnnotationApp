@@ -11,7 +11,7 @@ class User(db.Model, UserMixin):
 
 
 class Sequences(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    seq_id = db.Column(db.Integer, primary_key=True)
     dir = db.Column(db.String(250))
     n_frames = db.Column(db.Integer)
     start_frame = db.Column(db.String(50))
@@ -22,5 +22,5 @@ class LangAnn(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     seq_id = db.Column(db.Integer, unique=True)
     user_id = db.Column(db.Integer)
-    lang_ann = db.Column(db.String(50))
+    annotation = db.Column(db.String(50))
     task = db.Column(db.String(50))

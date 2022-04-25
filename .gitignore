@@ -5,3 +5,4 @@ webapp/static/tmp
 webapp/.fuse_hidden*
 webapp/.fuse_hidden0000004700000001
 webapp/static/
+webapp/database.db

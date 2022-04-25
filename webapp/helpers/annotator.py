@@ -25,7 +25,7 @@ def annotate():
             else:
                 seq_id = 1
             new_langdata = LangAnn(
-                seq_id=seq_id, user_id=current_user.id, task=request.form["task"], lang_ann=request.form["lang_ann"]
+                seq_id=seq_id, user_id=current_user.id, task=request.form["task"], annotation=request.form["annotation"]
             )
             db.session.add(new_langdata)
             db.session.commit()
@@ -42,7 +42,7 @@ def annotate():
             print("Starting LangData table!")
             seq_id = 1
 
-    seq = Sequences.query.filter_by(id=seq_id).first()
+    seq = Sequences.query.filter_by(seq_id=seq_id).first()
     if seq is None:
         return redirect(url_for("views.completed"))
     progress = float(LangAnn.query.count()) / float(Sequences.query.count()) * 100
