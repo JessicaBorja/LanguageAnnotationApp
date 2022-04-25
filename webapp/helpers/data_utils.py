@@ -22,6 +22,7 @@ class DataManager:
         self.n_seq_percentage = 0.10
         _json_data = self.read_json()
         if _json_data is None:
+            print("Iterating through the dataset to create a new json file...")
             self.data = self.read_data_preprocessed(Path(data_root))
         else:
             self.data = _json_data
@@ -34,6 +35,7 @@ class DataManager:
         if data_filename.is_file():
             with open(data_filename, "r") as read_file:
                 data = json.load(read_file)
+                print("found json file")
         else:
             print("Could not find previous data: %s" % data_filename)
         return data
@@ -155,7 +157,11 @@ class DataManager:
             start_filename = self.idx_to_filename(start_id)
             end_frame_idx = start_id + self.n_frames
             end_filename = self.idx_to_filename(end_frame_idx)
-            frames_info = {"indx": [start_filename, end_filename], "dir": play_data_path, "n_frames": self.n_frames}
+            frames_info = {
+                "indx": [start_filename, end_filename],
+                "dir": str(play_data_path),
+                "n_frames": self.n_frames,
+            }
             _data.append(frames_info)
         self.save_json(_data)
         return _data
