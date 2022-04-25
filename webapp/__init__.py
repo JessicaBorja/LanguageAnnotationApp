@@ -1,12 +1,15 @@
-from flask import Flask, session
-from flask_sqlalchemy import SQLAlchemy
 from os import path
+
+from flask import Flask, session
 from flask_login import LoginManager
-from .helpers.data_utils import DataManager
+from flask_sqlalchemy import SQLAlchemy
 import yaml
+
+from .helpers.data_utils import DataManager
 
 db = SQLAlchemy()
 DB_NAME = "database.db"
+
 
 def read_tasks():
     with open("./webapp/helpers/tasks.yaml", "r") as stream:
@@ -16,28 +19,27 @@ def read_tasks():
             print(exc)
     return tasks
 
+
 # Loading videos from
 tasks = read_tasks()
 data_path = "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop"
-data_manager = DataManager(data_path,
-                            n_frames=128,
-                            grip_pt_h=False)
+data_manager = DataManager(data_path, n_frames=128, grip_pt_h=False)
+
 
 def create_app():
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = 'hjshjhdjah kjshkjdhjs'
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    app.config["SECRET_KEY"] = "hjshjhdjah kjshkjdhjs"
+    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+    app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_NAME}"
     db.init_app(app)
 
-
-    from .helpers.views import views
-    from .helpers.auth import auth
     from .helpers.annotator import annotator
+    from .helpers.auth import auth
+    from .helpers.views import views
 
-    app.register_blueprint(views, url_prefix='/')
-    app.register_blueprint(auth, url_prefix='/')
-    app.register_blueprint(annotator, url_prefix='/')
+    app.register_blueprint(views, url_prefix="/")
+    app.register_blueprint(auth, url_prefix="/")
+    app.register_blueprint(annotator, url_prefix="/")
 
     from .helpers.models import User
 
@@ -45,7 +47,7 @@ def create_app():
 
     login_manager = LoginManager()
     login_manager.session_protection = "strong"
-    login_manager.login_view = 'auth.login'
+    login_manager.login_view = "auth.login"
     login_manager.init_app(app)
 
     @login_manager.user_loader
@@ -56,8 +58,7 @@ def create_app():
 
 
 def create_database(app):
-    if not path.exists('webapp/' + DB_NAME):
+    if not path.exists("webapp/" + DB_NAME):
         db.create_all(app=app)
 
-        print('Created Database!')
-
+        print("Created Database!")

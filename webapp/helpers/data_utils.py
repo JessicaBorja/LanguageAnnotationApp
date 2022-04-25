@@ -1,33 +1,31 @@
-import numpy as np
-import json
 import glob
-import cv2
+import json
 import os
-import imageio
-import base64
-import io
+
+import cv2
+import numpy as np
 
 
 class DataManager:
-    def __init__(self, data_path, n_frames, grip_pt_h=False) -> None:
+    def __init__(self, data_root: str, n_frames: int, grip_pt_h: bool = False) -> None:
         super().__init__()
-        self.tmp_dir = './webapp/static/tmp/'
+        self.tmp_dir = "./webapp/static/tmp/"
         os.makedirs(self.tmp_dir, exist_ok=True)
-        self.save_data_dir = './webapp/static/'
-        self.data_path = data_path
+        self.save_data_dir = "./webapp/static/"
+        self.data_path = data_root
         self.n_frames = n_frames
         self.grip_pt_h = grip_pt_h
         self.n_seq = 150
         _json_data = self.read_json()
         if _json_data is None:
-            self.data = self.read_data(data_path)
+            self.data = self.read_data(data_root)
         else:
             self.data = _json_data
         # self.create_add_videos()
         self._c = 1
 
     def read_json(self):
-        data_filename = os.path.join(self.save_data_dir, 'data.json')
+        data_filename = os.path.join(self.save_data_dir, "data.json")
         data = None
         if os.path.isfile(data_filename):
             with open(data_filename, "r") as read_file:
@@ -37,8 +35,8 @@ class DataManager:
         return data
 
     def save_json(self, data):
-        data_filename = os.path.join(self.save_data_dir, 'data.json')
-        with open(data_filename, 'w') as fout:
+        data_filename = os.path.join(self.save_data_dir, "data.json")
+        with open(data_filename, "w") as fout:
             json.dump(data, fout, indent=2)
 
     def create_tmp_video(self, start, end, dir, id):
@@ -61,11 +59,8 @@ class DataManager:
     def make_video(self, seq_imgs, fps=80, video_name="v"):
         video_path = os.path.join(self.tmp_dir, video_name)
         w, h = seq_imgs[0].shape[:2]
-        fourcc = cv2.VideoWriter_fourcc('V', 'P', '8', '0')
-        video = cv2.VideoWriter(
-            video_path,
-            fourcc,
-            fps, (w, h))  # 30 fps
+        fourcc = cv2.VideoWriter_fourcc("V", "P", "8", "0")
+        video = cv2.VideoWriter(video_path, fourcc, fps, (w, h))  # 30 fps
         print("writing video to %s" % video_path)
         for img in seq_imgs:
             video.write(img[:, :, ::-1])
@@ -81,19 +76,19 @@ class DataManager:
         return img
 
     def filename_to_idx(self, filename):
-        return int(filename.split('_')[-1][:-4])
+        return int(filename.split("_")[-1][:-4])
 
     def idx_to_filename(self, idx):
-        return 'frame_%06d.npz' % idx
+        return "frame_%06d.npz" % idx
 
     def read_data(self, play_data_path):
-        '''
-            play_data_path -> day -> time
-            _data:(list)
-                - {'indx': [start_filename, end_filename],
-                   'dir': directory of previous files,
-                   'n_frames': end_frame - start_frame}
-        '''
+        """
+        play_data_path -> day -> time
+        _data:(list)
+            - {'indx': [start_filename, end_filename],
+               'dir': directory of previous files,
+               'n_frames': end_frame - start_frame}
+        """
         # Get all posible initial_frames
         initial_frames = []
         date_folder = glob.glob("%s/*" % play_data_path, recursive=True)
@@ -107,7 +102,7 @@ class DataManager:
                 files.sort()
                 indices = range(0, len(files) - self.n_frames, self.n_frames // 2)
                 files = [files[i] for i in indices]
-                files = files[:-self.n_frames]
+                files = files[: -self.n_frames]
                 initial_frames.extend(files)
 
         # Select n_seq random sequences
@@ -120,16 +115,12 @@ class DataManager:
             frame_idx = self.filename_to_idx(start_filename)
             end_frame_idx = frame_idx + self.n_frames
             end_filename = self.idx_to_filename(end_frame_idx)
-            frames_info = {'indx': [start_filename, end_filename],
-                           'dir': head,
-                           'n_frames': self.n_frames}
+            frames_info = {"indx": [start_filename, end_filename], "dir": head, "n_frames": self.n_frames}
             _data.append(frames_info)
         self.save_json(_data)
         return _data
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     data_path = "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop"
-    data_manager = DataManager(data_path,
-                               n_frames=128,
-                               grip_pt_h=False)
+    data_manager = DataManager(data_path, n_frames=128, grip_pt_h=False)
