@@ -56,7 +56,7 @@ push_green_block_left:
   - "push the green block towards the left"
 
 push_purple_block_left:
-  - "grasp the purple block, then rotate it left"
+  - "push the purple block towards the left"
 
 push_blue_block_left:
   - "push the blue block towards the left"
@@ -341,3 +341,21 @@ stack_pink_on_green:
 
 stack_pink_on_purple:
   - "Stack the pink block on top of the purple block"
+
+push_yellow_block_in_drawer:
+  - "push the yellow block inside the drawer"
+
+push_green_block_in_drawer:
+  - "push the green block inside the drawer"
+
+push_purple_block_in_drawer:
+  - "push the purple block inside the drawer"
+
+push_blue_block_in_drawer:
+  - "push the blue block inside the drawer"
+
+push_orange_block_in_drawer:
+  - "push the orange block inside the drawer"
+
+push_pink_block_in_drawer:
+  - "push the pink block inside the drawer"
