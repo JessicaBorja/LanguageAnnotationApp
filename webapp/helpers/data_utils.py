@@ -32,14 +32,14 @@ class DataManager:
         if os.path.isfile(data_filename):
             with open(data_filename, "r") as read_file:
                 data = json.load(read_file)
-        else: 
+        else:
             print("Could not find previous data: %s" % data_filename)
         return data
 
     def save_json(self, data):
         data_filename = os.path.join(self.save_data_dir, 'data.json')
         with open(data_filename, 'w') as fout:
-            json.dump(data , fout, indent=2)
+            json.dump(data, fout, indent=2)
 
     def create_tmp_video(self, start, end, dir, id):
         video_tag = "tmp_%d.webM" % id
@@ -57,15 +57,15 @@ class DataManager:
         # self.make_video(seq_imgs, video_name="tmp")
         self.make_video(seq_imgs, video_name=video_tag)
         return video_tag
-   
+
     def make_video(self, seq_imgs, fps=80, video_name="v"):
         video_path = os.path.join(self.tmp_dir, video_name)
         w, h = seq_imgs[0].shape[:2]
-        fourcc = cv2.VideoWriter_fourcc('V','P','8','0')
+        fourcc = cv2.VideoWriter_fourcc('V', 'P', '8', '0')
         video = cv2.VideoWriter(
-                    video_path,
-                    fourcc,
-                    fps,(w,h))  # 30 fps
+            video_path,
+            fourcc,
+            fps, (w, h))  # 30 fps
         print("writing video to %s" % video_path)
         for img in seq_imgs:
             video.write(img[:, :, ::-1])
@@ -96,20 +96,20 @@ class DataManager:
         '''
         # Get all posible initial_frames
         initial_frames = []
-        date_folder = glob.glob("%s/*" %play_data_path, recursive=True)
+        date_folder = glob.glob("%s/*" % play_data_path, recursive=True)
         for path in date_folder:
             data_path = os.path.basename(path)
 
             # Get files in subdirectory
             time_folder = glob.glob("%s/*" % path, recursive=True)
             for dir in time_folder:
-                files = glob.glob("%s/**/frame_*.npz" %dir, recursive=True)
+                files = glob.glob("%s/**/frame_*.npz" % dir, recursive=True)
                 files.sort()
-                indices = range(0, len(files) - self.n_frames, self.n_frames//2)
+                indices = range(0, len(files) - self.n_frames, self.n_frames // 2)
                 files = [files[i] for i in indices]
                 files = files[:-self.n_frames]
                 initial_frames.extend(files)
-        
+
         # Select n_seq random sequences
         n_seq = min(len(initial_frames), self.n_seq)
         initial_frames = np.random.choice(initial_frames, size=n_seq, replace=False)
@@ -128,7 +128,7 @@ class DataManager:
         return _data
 
 
-if __name__== '__main__':
+if __name__ == '__main__':
     data_path = "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop"
     data_manager = DataManager(data_path,
                                n_frames=128,
