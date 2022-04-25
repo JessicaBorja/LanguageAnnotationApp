@@ -4,7 +4,7 @@ from telnetlib import SE
 from flask import Blueprint, flash, redirect, render_template, request, url_for
 from flask_login import current_user, login_required
 
-from webapp import data_manager, db, tasks
+from webapp import colors, data_manager, db, tasks
 
 from .models import LangAnn, Sequences
 
@@ -25,7 +25,11 @@ def annotate():
             else:
                 seq_id = 1
             new_langdata = LangAnn(
-                seq_id=seq_id, user_id=current_user.id, task=request.form["task"], annotation=request.form["annotation"]
+                seq_id=seq_id,
+                user_id=current_user.id,
+                task=request.form["task"],
+                color=request.form["color"],
+                annotation=request.form["annotation"],
             )
             db.session.add(new_langdata)
             db.session.commit()
@@ -47,7 +51,9 @@ def annotate():
         return redirect(url_for("views.completed"))
     progress = float(LangAnn.query.count()) / float(Sequences.query.count()) * 100
     filename = data_manager.create_tmp_video(seq.start_frame, seq.end_frame, seq.dir, seq_id)
-    return render_template("annotate.html", content=filename, progress=progress, tasks=tasks, user=current_user)
+    return render_template(
+        "annotate.html", content=filename, progress=progress, tasks=tasks, colors=colors, user=current_user
+    )
 
 
 # @annotator.route('/get_video', methods = ['GET'])

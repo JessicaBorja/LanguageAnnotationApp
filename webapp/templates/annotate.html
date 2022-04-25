@@ -35,6 +35,12 @@ Annotator
             <option value="{{t}}">{{captions[0]}}</option>"
             {% endfor %}
           </select>
+          <select name=color method="GET" action="/" required>
+            <option disabled selected value hidden> -- select an option -- </option>
+            {% for t, captions in colors.items() %}
+            <option value="{{t}}">{{captions[0]}}</option>"
+            {% endfor %}
+          </select>
         </div>
       </div>
       <div class="flex_row" style="margin:1em 0 0 0">

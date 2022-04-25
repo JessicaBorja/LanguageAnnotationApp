@@ -20,8 +20,18 @@ def read_tasks():
     return tasks
 
 
+def read_colors():
+    with open("./webapp/helpers/colors.yaml", "r") as stream:
+        try:
+            colors = yaml.safe_load(stream)
+        except yaml.YAMLError as exc:
+            print(exc)
+    return colors
+
+
 # Loading videos from
 tasks = read_tasks()
+colors = read_colors()
 data_path = "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop"
 data_manager = DataManager(data_path, n_frames=128, grip_pt_h=False)
 
