@@ -13,5 +13,313 @@ move_slide_right:
 move_freespace:
   - "Move"
 
-grasp_obj:
-  - "Grasping object"
+rotate_yellow_block_right:
+  - "grasp the yellow block, then rotate it right"
+
+rotate_green_block_right:
+  - "grasp the green block, then rotate it right"
+
+rotate_purple_block_right:
+  - "grasp the purple block, then rotate it right"
+
+rotate_blue_block_right:
+  - "grasp the blue block, then rotate it right"
+
+rotate_orange_block_right:
+  - "grasp the orange block, then rotate it right"
+
+rotate_pink_block_right:
+  - "grasp the pink block, then rotate it right"
+
+rotate_yellow_block_left:
+  - "grasp the yellow block, then rotate it left"
+
+rotate_green_block_left:
+  - "grasp the green block, then rotate it left"
+
+rotate_purple_block_left:
+  - "grasp the purple block, then rotate it left"
+
+rotate_blue_block_left:
+  - "grasp the blue block, then rotate it left"
+
+rotate_orange_block_left:
+  - "grasp the orange block, then rotate it left"
+
+rotate_pink_block_left:
+  - "grasp the pink block, then rotate it left"
+
+push_yellow_block_left:
+  - "push the yellow block towards the left"
+
+push_green_block_left:
+  - "push the green block towards the left"
+
+push_purple_block_left:
+  - "grasp the purple block, then rotate it left"
+
+push_blue_block_left:
+  - "push the blue block towards the left"
+
+push_orange_block_left:
+  - "push the orange block towards the left"
+
+push_pink_block_left:
+  - "push the pink block towards the left"
+
+push_yellow_block_right:
+  - "push the yellow block towards the right"
+
+push_green_block_right:
+  - "push the green block towards the right"
+
+push_purple_block_right:
+  - "push the purple block towards the right"
+
+push_blue_block_right:
+  - "push the blue block towards the right"
+
+push_orange_block_right:
+  - "push the orange block towards the right"
+
+push_pink_block_right:
+  - "push the pink block towards the right"
+
+turn_on_red_led:
+  - "turn on the red light"
+
+turn_on_green_led:
+  - "turn on the green light"
+
+turn_on_blue_led:
+  - "turn on the blue light"
+
+turn_off_red_led:
+  - "turn off the red light"
+
+turn_off_green_led:
+  - "turn off the green light"
+
+turn_off_blue_led:
+  - "turn off the blue light"
+
+place_blue_box:
+  - "Place the blue block inside the box"
+
+place_yellow_box:
+  - "Place the yellow block inside the box"
+
+place_green_box:
+  - "Place the green block inside the box"
+
+place_purple_box:
+  - "Place the purple block inside the box"
+
+place_orange_box:
+  - "Place the orange block inside the box"
+
+place_pink_box:
+  - "Place the pink block inside the box"
+
+place_blue_drawer:
+  - "Place the blue block inside the drawer"
+
+place_yellow_drawer:
+  - "Place the yellow block inside the drawer"
+
+place_green_drawer:
+  - "Place the green block inside the drawer"
+
+place_purple_drawer:
+  - "Place the purple block inside the drawer"
+
+place_orange_drawer:
+  - "Place the orange block inside the drawer"
+
+place_pink_drawer:
+  - "Place the pink block inside the drawer"
+
+place_blue_left_cabinet:
+  - "Place the blue block inside the left cabinet"
+
+place_yellow_left_cabinet:
+  - "Place the yellow block inside the left cabinet"
+
+place_green_left_cabinet:
+  - "Place the green block inside the left cabinet"
+
+place_purple_left_cabinet:
+  - "Place the purple block inside the left cabinet"
+
+place_orange_left_cabinet:
+  - "Place the orange block inside the left cabinet"
+
+place_pink_left_cabinet:
+  - "Place the pink block inside the left cabinet"
+
+place_blue_right_cabinet:
+  - "Place the blue block inside the right cabinet"
+
+place_yellow_right_cabinet:
+  - "Place the yellow block inside the right cabinet"
+
+place_green_right_cabinet:
+  - "Place the green block inside the right cabinet"
+
+place_purple_right_cabinet:
+  - "Place the purple block inside the right cabinet"
+
+place_orange_right_cabinet:
+  - "Place the orange block inside the right cabinet"
+
+place_pink_right_cabinet:
+  - "Place the pink block inside the right cabinet"
+
+place_blue_table:
+  - "Place the blue block on the table"
+
+place_yellow_table:
+  - "Place the yellow block on the table"
+
+place_green_table:
+  - "Place the green block on the table"
+
+place_purple_table:
+  - "Place the purple block on the table"
+
+place_orange_table:
+  - "Place the orange block on the table"
+
+place_pink_table:
+  - "Place the pink block on the table"
+
+unstack_blue:
+  - "Unstack the blue block"
+
+unstack_yellow:
+  - "Unstack the yellow block"
+
+unstack_green:
+  - "Unstack the green block"
+
+unstack_purple:
+  - "Unstack the purple block"
+
+unstack_orange:
+  - "Unstack the orange block"
+
+unstack_pink:
+  - "Unstack the pink block"
+
+lift_blue:
+  - "Lift the blue block"
+
+lift_yellow:
+  - "Lift the yellow block"
+
+lift_green:
+  - "Lift the green block"
+
+lift_purple:
+  - "Lift the purple block"
+
+lift_orange:
+  - "Lift the orange block"
+
+lift_pink:
+  - "Lift the pink block"
+
+stack_blue_on_green:
+  - "Stack the blue block on top of the green block"
+
+stack_blue_on_yellow:
+  - "Stack the yellow block on top of the yellow block"
+
+stack_blue_on_pink:
+  - "Stack the blue block on top of the pink block"
+
+stack_blue_on_purple:
+  - "Stack the blue block on top of the purple block"
+
+stack_blue_on_orange:
+  - "Stack the blue block on top of the orange block"
+
+##############################
+stack_yellow_on_green:
+  - "Stack the yellow block on top of the green block"
+
+stack_yellow_on_blue:
+  - "Stack the yellow block on top of the blue block"
+
+stack_yellow_on_pink:
+  - "Stack the yellow block on top of the pink block"
+
+stack_yellow_on_purple:
+  - "Stack the yellow block on top of the purple block"
+
+stack_yellow_on_orange:
+  - "Stack the yellow block on top of the orange block"
+
+##############################
+stack_green_on_yellow:
+  - "Stack the green block on top of the yellow block"
+
+stack_green_on_blue:
+  - "Stack the green block on top of the blue block"
+
+stack_green_on_pink:
+  - "Stack the green block on top of the pink block"
+
+stack_green_on_purple:
+  - "Stack the green block on top of the purple block"
+
+stack_green_on_orange:
+  - "Stack the green block on top of the orange block"
+
+##############################
+stack_purple_on_yellow:
+  - "Stack the purple block on top of the yellow block"
+
+stack_purple_on_blue:
+  - "Stack the purple block on top of the blue block"
+
+stack_purple_on_pink:
+  - "Stack the purple block on top of the pink block"
+
+stack_purple_on_green:
+  - "Stack the purple block on top of the green block"
+
+stack_purple_on_orange:
+  - "Stack the purple block on top of the orange block"
+
+##############################
+stack_orange_on_yellow:
+  - "Stack the orange block on top of the yellow block"
+
+stack_orange_on_blue:
+  - "Stack the orange block on top of the blue block"
+
+stack_orange_on_pink:
+  - "Stack the orange block on top of the pink block"
+
+stack_orange_on_green:
+  - "Stack the orange block on top of the green block"
+
+stack_orange_on_purple:
+  - "Stack the orange block on top of the purple block"
+
+##############################
+stack_pink_on_yellow:
+  - "Stack the pink block on top of the yellow block"
+
+stack_pink_on_blue:
+  - "Stack the pink block on top of the blue block"
+
+stack_pink_on_orange:
+  - "Stack the pink block on top of the orange block"
+
+stack_pink_on_green:
+  - "Stack the pink block on top of the green block"
+
+stack_pink_on_purple:
+  - "Stack the pink block on top of the purple block"

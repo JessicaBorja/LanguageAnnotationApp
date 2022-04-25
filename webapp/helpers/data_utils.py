@@ -171,4 +171,4 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset_root", type=str, default="data", help="directory where raw dataset is allocated")
     args = parser.parse_args()
-    data_manager = DataManager(args.dataset_root, n_frames=128, grip_pt_h=False)
+    data_manager = DataManager(args.dataset_root, n_frames=256, grip_pt_h=False)
