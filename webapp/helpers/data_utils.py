@@ -23,7 +23,7 @@ class DataManager:
         _json_data = self.read_json()
         if _json_data is None:
             print("Iterating through the dataset to create a new json file...")
-            self.data = self.read_data_preprocessed(Path(data_root))
+            self.data = self.read_data_preprocessed_heuristic(Path(data_root))
         else:
             self.data = _json_data
         # self.create_add_videos()
@@ -134,6 +134,39 @@ class DataManager:
         return _data
 
     def read_data_preprocessed(self, play_data_path):
+        """
+        play_data_path -> day -> time
+        _data:(list)
+            - {'indx': [start_filename, end_filename],
+               'dir': directory of previous files,
+               'n_frames': end_frame - start_frame}
+        """
+        # Get all posible initial_frames
+        initial_frames = []
+        ep_start_end_ids = np.load(play_data_path / "ep_start_end_ids.npy").tolist()
+        # iterate over each episode
+        for ep in ep_start_end_ids:
+            indices = list(range(ep[0], ep[1] - self.n_frames, self.n_frames // 2))
+            # Select n_seq random sequences
+            rand_seqs = sorted(random.sample(indices, round(len(indices) * self.n_seq_percentage)))
+            initial_frames.extend(rand_seqs)
+
+        frames_info = {}
+        _data = []
+        for start_id in initial_frames:
+            start_filename = self.idx_to_filename(start_id)
+            end_frame_idx = start_id + self.n_frames
+            end_filename = self.idx_to_filename(end_frame_idx)
+            frames_info = {
+                "indx": [start_filename, end_filename],
+                "dir": str(play_data_path),
+                "n_frames": self.n_frames,
+            }
+            _data.append(frames_info)
+        self.save_json(_data)
+        return _data
+
+    def read_data_preprocessed_heuristic(self, play_data_path):
         """
         play_data_path -> day -> time
         _data:(list)

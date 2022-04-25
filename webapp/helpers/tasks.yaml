@@ -191,7 +191,25 @@ place_orange_table:
   - "Place the orange block on the table"
 
 place_pink_table:
-  - "Place the pink block on the table"
+  - "Place the pink block on top of table"
+
+place_blue_drawer_top:
+  - "Place the blue block on top of the drawer"
+
+place_yellow_drawer_top:
+  - "Place the yellow block on top of the drawer"
+
+place_green_drawer_top:
+  - "Place the green block on top of the drawer"
+
+place_purple_drawer_top:
+  - "Place the purple block on top of the drawer"
+
+place_orange_drawer_top:
+  - "Place the orange block on top of the drawer"
+
+place_pink_drawer_top:
+  - "Place the pink block on top of the drawer"
 
 unstack_blue:
   - "Unstack the blue block"
