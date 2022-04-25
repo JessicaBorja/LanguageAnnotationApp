@@ -92,7 +92,7 @@ class DataManager:
         return int(filename.split("_")[-1][:-4])
 
     def idx_to_filename(self, idx):
-        return "frame_%06d.npz" % idx
+        return "episode_%06d.npz" % idx
 
     def read_data_unprocessed(self, play_data_path):
         """
@@ -127,7 +127,7 @@ class DataManager:
             head, start_filename = os.path.split(frame_dir)
             frame_idx = self.filename_to_idx(start_filename)
             end_frame_idx = frame_idx + self.n_frames
-            end_filename = self.idx_to_filename(end_frame_idx)
+            end_filename = "episode_%06d.npz" % end_frame_idx
             frames_info = {"indx": [start_filename, end_filename], "dir": head, "n_frames": self.n_frames}
             _data.append(frames_info)
         self.save_json(_data)
