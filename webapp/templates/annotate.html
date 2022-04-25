@@ -12,9 +12,14 @@ Annotator
 <form method="POST">
   <div align="center">
     <h5 align="center">Which instruction would you give to the robot to complete the following task?</h5>
-    <video controls="" autoplay="" name="media" style="margin: 1em 0" id="video">
-      <source id="video_src" src="{{url_for('static',filename='tmp/' +content )}}" type="video/webm">
-    </video>
+    <div class="flex_row">
+      <video controls="" autoplay="" name="media" style="margin: 1em 0" id="video">
+        <source id="video_src" src="{{url_for('static',filename='static_cam/' +content )}}" type="video/webm">
+      </video>
+      <video controls="" autoplay="" name="media" style="margin: 1em 0" id="video">
+        <source id="video_src" src="{{url_for('static',filename='gripper_cam/' +content )}}" type="video/webm">
+      </video>
+    </div>
     <br />
     <div class="flex_column">
       <div class="flex_row">
