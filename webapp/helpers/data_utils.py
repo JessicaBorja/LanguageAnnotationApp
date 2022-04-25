@@ -1,3 +1,4 @@
+import argparse
 import glob
 import json
 import os
@@ -122,5 +123,7 @@ class DataManager:
 
 
 if __name__ == "__main__":
-    data_path = "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop"
-    data_manager = DataManager(data_path, n_frames=128, grip_pt_h=False)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--dataset_root", type=str, default="data", help="directory where raw dataset is allocated")
+    args = parser.parse_args()
+    data_manager = DataManager(args.dataset_root, n_frames=128, grip_pt_h=False)
