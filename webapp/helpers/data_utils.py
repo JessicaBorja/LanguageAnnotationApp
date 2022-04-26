@@ -19,7 +19,7 @@ class DataManager:
         self.save_data_dir = Path("./webapp/static/")
         self.n_frames = n_frames
         self.grip_pt_h = grip_pt_h
-        self.n_seq_percentage = 0.50
+        self.n_seq_percentage = 1.0
         _json_data = self.read_json()
         if _json_data is None:
             print("Iterating through the dataset to create a new json file...")
