@@ -1,14 +1,17 @@
-yellow:
-  - "yellow"
+red:
+  - "red"
+
+blue:
+  - "blue"
 
 green:
   - "green"
 
+yellow:
+  - "yellow"
+
 purple:
   - "purple"
-
-blue:
-  - "blue"
 
 orange:
   - "orange"
