@@ -23,7 +23,7 @@ class DataManager:
         _json_data = self.read_json()
         if _json_data is None:
             print("Iterating through the dataset to create a new json file...")
-            self.data = self.read_data_preprocessed_heuristic(Path(data_root))
+            self.data = self.read_data_preprocessed(Path(data_root))
         else:
             self.data = _json_data
         # self.create_add_videos()
