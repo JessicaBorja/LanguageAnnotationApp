@@ -25,13 +25,23 @@ def annotate():
             else:
                 seq_id = 1
 
+            if 'color_x' in request.form:
+                color_x = request.form['color_x']
+            else:
+                color_x = ""
+
+            if 'color_y' in request.form:
+                color_y = request.form['color_y']
+            else:
+                color_y = ""
+
             new_langdata = LangAnn(
                 seq_id=seq_id,
                 user_id=current_user.id,
                 task=request.form['task'],
                 annotation="",
-                color_x=request.form['color_x'],
-                color_y=request.form['color_y']
+                color_x=color_x,
+                color_y=color_y
             )
             db.session.add(new_langdata)
             db.session.commit()
