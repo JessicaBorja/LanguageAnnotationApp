@@ -13,77 +13,17 @@ move_slide_right:
 move_freespace:
   - "Move"
 
-rotate_yellow_block_right:
-  - "grasp the yellow block, then rotate it right"
+rotate_block_right:
+  - "grasp the x block, then rotate it right"
 
-rotate_green_block_right:
-  - "grasp the green block, then rotate it right"
+rotate_block_left:
+  - "grasp the x block, then rotate it left"
 
-rotate_purple_block_right:
-  - "grasp the purple block, then rotate it right"
+push_block_left:
+  - "push the x block towards the left"
 
-rotate_blue_block_right:
-  - "grasp the blue block, then rotate it right"
-
-rotate_orange_block_right:
-  - "grasp the orange block, then rotate it right"
-
-rotate_pink_block_right:
-  - "grasp the pink block, then rotate it right"
-
-rotate_yellow_block_left:
-  - "grasp the yellow block, then rotate it left"
-
-rotate_green_block_left:
-  - "grasp the green block, then rotate it left"
-
-rotate_purple_block_left:
-  - "grasp the purple block, then rotate it left"
-
-rotate_blue_block_left:
-  - "grasp the blue block, then rotate it left"
-
-rotate_orange_block_left:
-  - "grasp the orange block, then rotate it left"
-
-rotate_pink_block_left:
-  - "grasp the pink block, then rotate it left"
-
-push_yellow_block_left:
-  - "push the yellow block towards the left"
-
-push_green_block_left:
-  - "push the green block towards the left"
-
-push_purple_block_left:
-  - "push the purple block towards the left"
-
-push_blue_block_left:
-  - "push the blue block towards the left"
-
-push_orange_block_left:
-  - "push the orange block towards the left"
-
-push_pink_block_left:
-  - "push the pink block towards the left"
-
-push_yellow_block_right:
-  - "push the yellow block towards the right"
-
-push_green_block_right:
-  - "push the green block towards the right"
-
-push_purple_block_right:
-  - "push the purple block towards the right"
-
-push_blue_block_right:
-  - "push the blue block towards the right"
-
-push_orange_block_right:
-  - "push the orange block towards the right"
-
-push_pink_block_right:
-  - "push the pink block towards the right"
+push_block_right:
+  - "push the x block towards the right"
 
 turn_on_red_led:
   - "turn on the red light"
@@ -103,149 +43,32 @@ turn_off_green_led:
 turn_off_blue_led:
   - "turn off the blue light"
 
-place_blue_box:
-  - "Place the blue block inside the box"
+place_box:
+  - "Place the x block inside the box"
 
-place_yellow_box:
-  - "Place the yellow block inside the box"
+place_drawer:
+  - "Place the x block inside the drawer"
 
-place_green_box:
-  - "Place the green block inside the box"
+place_left_cabinet:
+  - "Place the x block inside the left cabinet"
 
-place_purple_box:
-  - "Place the purple block inside the box"
+place_right_cabinet:
+  - "Place the x block inside the right cabinet"
 
-place_orange_box:
-  - "Place the orange block inside the box"
+place_x_table:
+  - "Place the x block on the table"
 
-place_pink_box:
-  - "Place the pink block inside the box"
+place_drawer_top:
+  - "Place the x block on top of the drawer"
 
-place_blue_drawer:
-  - "Place the blue block inside the drawer"
+unstack_block:
+  - "Unstack the x block"
 
-place_yellow_drawer:
-  - "Place the yellow block inside the drawer"
+lift_block:
+  - "Lift the x block"
 
-place_green_drawer:
-  - "Place the green block inside the drawer"
-
-place_purple_drawer:
-  - "Place the purple block inside the drawer"
-
-place_orange_drawer:
-  - "Place the orange block inside the drawer"
-
-place_pink_drawer:
-  - "Place the pink block inside the drawer"
-
-place_blue_left_cabinet:
-  - "Place the blue block inside the left cabinet"
-
-place_yellow_left_cabinet:
-  - "Place the yellow block inside the left cabinet"
-
-place_green_left_cabinet:
-  - "Place the green block inside the left cabinet"
-
-place_purple_left_cabinet:
-  - "Place the purple block inside the left cabinet"
-
-place_orange_left_cabinet:
-  - "Place the orange block inside the left cabinet"
-
-place_pink_left_cabinet:
-  - "Place the pink block inside the left cabinet"
-
-place_blue_right_cabinet:
-  - "Place the blue block inside the right cabinet"
-
-place_yellow_right_cabinet:
-  - "Place the yellow block inside the right cabinet"
-
-place_green_right_cabinet:
-  - "Place the green block inside the right cabinet"
-
-place_purple_right_cabinet:
-  - "Place the purple block inside the right cabinet"
-
-place_orange_right_cabinet:
-  - "Place the orange block inside the right cabinet"
-
-place_pink_right_cabinet:
-  - "Place the pink block inside the right cabinet"
-
-place_blue_table:
-  - "Place the blue block on the table"
-
-place_yellow_table:
-  - "Place the yellow block on the table"
-
-place_green_table:
-  - "Place the green block on the table"
-
-place_purple_table:
-  - "Place the purple block on the table"
-
-place_orange_table:
-  - "Place the orange block on the table"
-
-place_pink_table:
-  - "Place the pink block on top of table"
-
-place_blue_drawer_top:
-  - "Place the blue block on top of the drawer"
-
-place_yellow_drawer_top:
-  - "Place the yellow block on top of the drawer"
-
-place_green_drawer_top:
-  - "Place the green block on top of the drawer"
-
-place_purple_drawer_top:
-  - "Place the purple block on top of the drawer"
-
-place_orange_drawer_top:
-  - "Place the orange block on top of the drawer"
-
-place_pink_drawer_top:
-  - "Place the pink block on top of the drawer"
-
-unstack_blue:
-  - "Unstack the blue block"
-
-unstack_yellow:
-  - "Unstack the yellow block"
-
-unstack_green:
-  - "Unstack the green block"
-
-unstack_purple:
-  - "Unstack the purple block"
-
-unstack_orange:
-  - "Unstack the orange block"
-
-unstack_pink:
-  - "Unstack the pink block"
-
-lift_blue:
-  - "Lift the blue block"
-
-lift_yellow:
-  - "Lift the yellow block"
-
-lift_green:
-  - "Lift the green block"
-
-lift_purple:
-  - "Lift the purple block"
-
-lift_orange:
-  - "Lift the orange block"
-
-lift_pink:
-  - "Lift the pink block"
+push_block_in_drawer:
+  - "push the x block inside the drawer"
 
 stack_blue_on_green:
   - "Stack the blue block on top of the green block"
@@ -341,21 +164,3 @@ stack_pink_on_green:
 
 stack_pink_on_purple:
   - "Stack the pink block on top of the purple block"
-
-push_yellow_block_in_drawer:
-  - "push the yellow block inside the drawer"
-
-push_green_block_in_drawer:
-  - "push the green block inside the drawer"
-
-push_purple_block_in_drawer:
-  - "push the purple block inside the drawer"
-
-push_blue_block_in_drawer:
-  - "push the blue block inside the drawer"
-
-push_orange_block_in_drawer:
-  - "push the orange block inside the drawer"
-
-push_pink_block_in_drawer:
-  - "push the pink block inside the drawer"
