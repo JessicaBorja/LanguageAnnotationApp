@@ -41,6 +41,15 @@ Annotator
             {% endfor %}
           </select>
         </div>
+      <div class="flex_column" style="margin:0.5em 0 0 2em">
+          <p>On which colored block is the stacking taking place?</p>
+          <select name=color method="GET" action="/">
+            <option disabled selected value hidden> -- select an option -- </option>
+            {% for t, captions in colors.items() %}
+            <option value="{{t}}">{{captions[0]}}</option>"
+            {% endfor %}
+          </select>
+        </div>
       </div>
       <div class="flex_row" style="margin:1em 0 0 0">
         <input class="btn btn-secondary" type="submit" name="submit_button" value="end">
