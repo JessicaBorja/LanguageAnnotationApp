@@ -24,3 +24,5 @@ class LangAnn(db.Model):
     user_id = db.Column(db.Integer)
     annotation = db.Column(db.String(50))
     task = db.Column(db.String(50))
+    color_x = db.Column(db.String(50))
+    color_y = db.Column(db.String(50))

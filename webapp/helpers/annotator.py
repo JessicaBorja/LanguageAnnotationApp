@@ -24,12 +24,14 @@ def annotate():
                 seq_id = max(_curr_ids)[0] + 1
             else:
                 seq_id = 1
+
             new_langdata = LangAnn(
                 seq_id=seq_id,
                 user_id=current_user.id,
-                task=request.form["task"],
-                color=request.form["color"],
-                annotation=request.form["annotation"],
+                task=request.form['task'],
+                annotation="",
+                color_x=request.form['color_x'],
+                color_y=request.form['color_y']
             )
             db.session.add(new_langdata)
             db.session.commit()
@@ -52,7 +54,8 @@ def annotate():
     progress = float(LangAnn.query.count()) / float(Sequences.query.count()) * 100
     filename = data_manager.create_tmp_video(seq.start_frame, seq.end_frame, seq.dir, seq_id)
     return render_template(
-        "annotate.html", content=filename, progress=progress, tasks=tasks, colors=colors, user=current_user
+        "annotate.html",content=filename, progress=progress,
+        tasks=tasks, colors=colors, user=current_user
     )
 
 

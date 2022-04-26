@@ -30,7 +30,7 @@ def get_annotations(conn):
     cur = conn.cursor()
     cur.execute(
         """
-    SELECT lang_ann.annotation, lang_ann.task, sequences.start_frame, sequences.end_frame
+    SELECT lang_ann.task, lang_ann.color_x, lang_ann.color_y, sequences.start_frame, sequences.end_frame
     FROM lang_ann INNER JOIN sequences ON lang_ann.seq_id=sequences.seq_id;
     """
     )
@@ -43,6 +43,12 @@ def get_annotations(conn):
 def filename_to_idx(filename):
     return int(filename.split("_")[-1][:-4])
 
+def compose_task(task, color_x, color_y):
+    if '[x]' in task:
+        task = task.replace('[x]', color_x)
+    if '[y]' in task:
+        task = task.replace('[y]', color_y)
+    return task
 
 def main(save_path):
     data = {
@@ -53,7 +59,9 @@ def main(save_path):
         "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/LanguageAnnotationApp/webapp/database.db"
     )
     rows = get_annotations(conn)
-    for ann, task, start_fr, end_fr in rows:
+    for task, color_x, color_y, start_fr, end_fr in rows:
+        ann = compose_task(task, color_x, color_y)
+        task = compose_task(task, color_x, color_y)
         data["language"]["ann"].append(ann)
         data["language"]["task"].append(task)
 

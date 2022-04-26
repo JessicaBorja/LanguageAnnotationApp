@@ -20,7 +20,6 @@ Annotator
         <source id="video_src" src="{{url_for('static',filename='gripper_cam/' +content )}}" type="video/webm">
       </video>
     </div>
-    <br />
     <div class="flex_column">
       <div class="flex_row">
         <div class="flex_column" style="margin:0.5em 0 0 2em">
@@ -32,23 +31,24 @@ Annotator
             {% endfor %}
           </select>
         </div>
-          <div class="flex_column" style="margin:0.5em 0 0 2em">
-          <p>Select the block color the task is being completed with</p>
-          <select name=color method="GET" action="/">
-            <option disabled selected value hidden> -- select an option -- </option>
-            {% for t, captions in colors.items() %}
-            <option value="{{t}}">{{captions[0]}}</option>"
+        <div class="flex_column" style="margin:0.5em 0 0 2em">
+          <p style="margin:1.5em 0;">Select the [x] block color</p>
+          <div class="color_buttons">
+            {% for c, hex_color in colors.items() %}
+              <input type="radio" class="btn-check" name="color_x" id="x_btn_{{c}}" autocomplete="off" method="GET" action="/" value="{{c}}">
+              <label class="btn btn-secondary block {{c}}" for="x_btn_{{c}}">{{c}}</label>
             {% endfor %}
-          </select>
+          </div>
         </div>
-      <div class="flex_column" style="margin:0.5em 0 0 2em">
-          <p>On which colored block is the stacking taking place?</p>
-          <select name=color method="GET" action="/">
-            <option disabled selected value hidden> -- select an option -- </option>
-            {% for t, captions in colors.items() %}
-            <option value="{{t}}">{{captions[0]}}</option>"
-            {% endfor %}
-          </select>
+        <div class="flex_column" style="margin:0.5em 0 0 2em">
+            <p style="margin:0;">If applicable, select block [y] color.</p>
+            <p>stack on top of block [y].</p>
+            <div class="color_buttons">
+              {% for c, hex_color in colors.items() %}
+                <input type="radio" class="btn-check" name="color_y" id="y_btn_{{c}}" autocomplete="off" method="GET" action="/" value="{{c}}">
+                <label class="btn btn-secondary block {{c}}" for="y_btn_{{c}}">{{c}}</label>
+              {% endfor %}
+            </div>
         </div>
       </div>
       <div class="flex_row" style="margin:1em 0 0 0">

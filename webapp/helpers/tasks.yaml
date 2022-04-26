@@ -13,62 +13,50 @@ move_slide_right:
 move_freespace:
   - "Move"
 
-rotate_block_right:
+turn_on_[x]_led:
+  - "turn on the x light"
+
+turn_off_[x]_led:
+  - "turn off the x light"
+
+rotate_[x]_block_right:
   - "grasp the x block, then rotate it right"
 
-rotate_block_left:
+rotate_[x]_block_left:
   - "grasp the x block, then rotate it left"
 
-push_block_left:
+push_[x]_block_left:
   - "push the x block towards the left"
 
-push_block_right:
+push_[x]_block_right:
   - "push the x block towards the right"
 
-turn_on_red_led:
-  - "turn on the red light"
-
-turn_on_green_led:
-  - "turn on the green light"
-
-turn_on_blue_led:
-  - "turn on the blue light"
-
-turn_off_red_led:
-  - "turn off the red light"
-
-turn_off_green_led:
-  - "turn off the green light"
-
-turn_off_blue_led:
-  - "turn off the blue light"
-
-place_box:
+place_[x]_box:
   - "Place the x block inside the box"
 
-place_drawer:
+place_[x]_drawer:
   - "Place the x block inside the drawer"
 
-place_left_cabinet:
+place_[x]_left_cabinet:
   - "Place the x block inside the left cabinet"
 
-place_right_cabinet:
+place_[x]_right_cabinet:
   - "Place the x block inside the right cabinet"
 
-place_x_table:
+place_[x]_table:
   - "Place the x block on the table"
 
-place_drawer_top:
+place_[x]_drawer_top:
   - "Place the x block on top of the drawer"
 
-unstack_block:
+unstack_[x]_block:
   - "Unstack the x block"
 
-lift_block:
+lift_[x]_block:
   - "Lift the x block"
 
-push_block_in_drawer:
+push_[x]_block_in_drawer:
   - "push the x block inside the drawer"
 
-stack_x_on_y:
+stack_[x]_on_[y]:
   - "Stack the x block on top of the y block"

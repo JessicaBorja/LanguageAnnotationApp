@@ -17,3 +17,66 @@
 .btn {
     margin: 0 1em;
 }
+
+.flex_btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 200px;
+}
+
+.block{
+    margin: 0.1em;
+    padding: 0.5em;
+    font-weight: 500;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    width: 55px;
+    height: 55px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.color_buttons{
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.yellow {
+    background-color: #ffcf00fa;
+}
+
+/* .btn-check:checked+.btn-secondary.yellow{
+    color: #fff;
+    background-color: #bcba45;
+    border: 10px;
+} */
+
+.green {
+    background-color: #79be12;
+}
+
+.purple {
+    background-color: #c58eff;
+}
+
+.blue {
+    background-color: #409eea;
+}
+
+.orange {
+    background-color: #ff8504;
+}
+
+.pink {
+    background-color: #f75aa9;
+}
