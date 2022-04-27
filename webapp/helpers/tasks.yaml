@@ -8,7 +8,7 @@ move_slide_left:
   - "Moving sliding door to the left"
 
 move_slide_right:
-  - "Moving sliding door to the left"
+  - "Moving sliding door to the right"
 
 turn_on_[x]_led:
   - "turn on the x light"
