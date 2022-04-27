@@ -10,9 +10,6 @@ move_slide_left:
 move_slide_right:
   - "Moving sliding door to the left"
 
-move_freespace:
-  - "Move"
-
 turn_on_[x]_led:
   - "turn on the x light"
 
