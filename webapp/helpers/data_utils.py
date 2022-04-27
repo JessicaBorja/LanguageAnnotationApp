@@ -146,7 +146,7 @@ class DataManager:
         ep_start_end_ids = np.load(play_data_path / "ep_start_end_ids.npy").tolist()
         # iterate over each episode
         for ep in ep_start_end_ids:
-            indices = list(range(ep[0], ep[1] - self.n_frames, self.n_frames // 2))
+            indices = list(range(ep[0], ep[1] - self.n_frames, self.n_frames // 3))
             # Select n_seq random sequences
             rand_seqs = sorted(random.sample(indices, round(len(indices) * self.n_seq_percentage)))
             initial_frames.extend(rand_seqs)

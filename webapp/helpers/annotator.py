@@ -15,33 +15,32 @@ annotator = Blueprint("annotator", __name__)  # set up blueprint
 @login_required
 def annotate():
     if request.method == "POST":
-        # Handle requests comming from annotate.html
+        # Handle requests coming from annotate.html
         # To save to database
-        if request.form["submit_button"] == "next":
-            print(current_user.id)
+        if request.form["submit_button"] == "next" or request.form["submit_button"] == "no_task":
             _curr_ids = db.session.query(LangAnn.id).all()
             if len(_curr_ids) > 0:
                 seq_id = max(_curr_ids)[0] + 1
             else:
                 seq_id = 1
 
-            if 'color_x' in request.form:
-                color_x = request.form['color_x']
+            if "color_x" in request.form:
+                color_x = request.form["color_x"]
             else:
                 color_x = ""
 
-            if 'color_y' in request.form:
-                color_y = request.form['color_y']
+            if "color_y" in request.form:
+                color_y = request.form["color_y"]
             else:
                 color_y = ""
 
             new_langdata = LangAnn(
                 seq_id=seq_id,
                 user_id=current_user.id,
-                task=request.form['task'],
+                task=request.form["task"] if request.form["submit_button"] == "next" else "no_task",
                 annotation="",
                 color_x=color_x,
-                color_y=color_y
+                color_y=color_y,
             )
             db.session.add(new_langdata)
             db.session.commit()
@@ -64,8 +63,7 @@ def annotate():
     progress = float(LangAnn.query.count()) / float(Sequences.query.count()) * 100
     filename = data_manager.create_tmp_video(seq.start_frame, seq.end_frame, seq.dir, seq_id)
     return render_template(
-        "annotate.html",content=filename, progress=progress,
-        tasks=tasks, colors=colors, user=current_user
+        "annotate.html", content=filename, progress=progress, tasks=tasks, colors=colors, user=current_user
     )
 
 
