@@ -6,6 +6,9 @@ setup(
     description="Python Distribution Utilities",
     packages=["webapp"],
     install_requires=[
+        "ftfy",
+        "sentence-transformers",
+        "hydra-core",
         "numpy",
         "flask_sqlalchemy",
         "flask_login",

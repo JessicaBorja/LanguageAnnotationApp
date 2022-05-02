@@ -1,0 +1,16 @@
+defaults:
+  - lang_model: bert
+
+ignore_empty_tasks: True
+
+lang_model:
+  nlp_model: paraphrase-MiniLM-L3-v2
+
+save_path: ./
+database_path: webapp/database.db
+
+#-- Hydra config --#
+hydra_outputs: ./hydra_outputs/tmp/
+hydra:
+  run:
+    dir: ${hydra_outputs}/${now:%Y-%m-%d}/${now:%H-%M-%S} # Output
