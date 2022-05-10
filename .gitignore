@@ -9,3 +9,4 @@ webapp/*.db
 scripts/auto_lang_ann.npy
 hydra_outputs/
 webapp/data.json
+annotations/

@@ -9,6 +9,7 @@ from .core.clip import build_model, load_clip, tokenize
 class CLIPLang(nn.Module):
     def __init__(self, freeze_backbone: bool = True, model_name: str = "RN50", *args, **kwargs):
         super(CLIPLang, self).__init__()
+        self.name = "lang_clip"
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         # Load CLIP model
         print(f"loading language CLIP model with backbone: {model_name}")

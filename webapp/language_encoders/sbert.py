@@ -9,6 +9,7 @@ class SBert(nn.Module):
     def __init__(self, nlp_model: str, *args, **kwargs):
         #  choose model from https://www.sbert.net/docs/pretrained_models.html
         super().__init__()
+        self.name = "lang_%s" % nlp_model
         assert isinstance(nlp_model, str)
         self.model = SentenceTransformer(nlp_model)
 

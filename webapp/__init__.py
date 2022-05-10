@@ -4,7 +4,8 @@ from flask import Flask, session
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 import yaml
-
+import pathlib
+import os
 from .helpers.data_utils import DataManager
 
 db = SQLAlchemy()
@@ -12,7 +13,9 @@ DB_NAME = "database.db"
 
 
 def read_tasks():
-    with open("./webapp/helpers/tasks.yaml", "r") as stream:
+    file_dir = pathlib.Path(__file__).parent.resolve()
+    file = file_dir / "helpers/tasks.yaml"
+    with open(file.as_posix(), "r") as stream:
         try:
             tasks = yaml.safe_load(stream)
         except yaml.YAMLError as exc:
@@ -21,7 +24,9 @@ def read_tasks():
 
 
 def read_colors():
-    with open("./webapp/helpers/colors.yaml", "r") as stream:
+    file_dir = pathlib.Path(__file__).parent.resolve()
+    file = file_dir / "helpers/colors.yaml"
+    with open(file.as_posix(), "r") as stream:
         try:
             colors = yaml.safe_load(stream)
         except yaml.YAMLError as exc:
