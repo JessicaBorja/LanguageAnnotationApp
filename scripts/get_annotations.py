@@ -53,9 +53,9 @@ def filename_to_idx(filename):
 
 
 def overwrite_colors(task, color_x, color_y):
-    if '[x]' in task:
+    if '[x]' in task and color_x != "":
         task = task.replace('[x]', color_x)
-    if '[y]' in task:
+    if '[y]' in task and color_y != "":
         task = task.replace('[y]', color_y)
     return task
 
@@ -132,7 +132,8 @@ def main(cfg):
         task = overwrite_colors(task, color_x, color_y)
         data["language"]["ann"].append(ann)
         data["language"]["task"].append(task)
-        data["language"]["emb"].append(nlp_model(ann).cpu().numpy())
+        emb = nlp_model(ann).permute(1,0).cpu().numpy()
+        data["language"]["emb"].append(emb)
 
         start_idx = filename_to_idx(start_fr)
         end_idx = filename_to_idx(end_fr)
