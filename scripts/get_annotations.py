@@ -53,10 +53,8 @@ def filename_to_idx(filename):
 
 
 def overwrite_colors(task, color_x, color_y):
-    if '[x]' in task and color_x != "":
-        task = task.replace('[x]', color_x)
-    if '[y]' in task and color_y != "":
-        task = task.replace('[y]', color_y)
+    task = task.replace('[x]', color_x)
+    task = task.replace('[y]', color_y)
     return task
 
 
@@ -125,19 +123,19 @@ def main(cfg):
     # Get database data
     rows = get_annotations(conn, cfg.ignore_empty_tasks)
     for task, color_x, color_y, start_fr, end_fr in tqdm(rows):
-        posible_annotations = task_annotations[task]
-        ann_idx = np.random.randint(len(posible_annotations))
+        if ('[x]' in task and color_x != "") or ('[y]' in task and color_y != ""):
+            posible_annotations = task_annotations[task]
+            ann_idx = np.random.randint(len(posible_annotations))
+            ann = overwrite_colors(posible_annotations[ann_idx], color_x, color_y)
+            task = overwrite_colors(task, color_x, color_y)
+            data["language"]["ann"].append(ann)
+            data["language"]["task"].append(task)
+            emb = nlp_model(ann).permute(1,0).cpu().numpy()
+            data["language"]["emb"].append(emb)
 
-        ann = overwrite_colors(posible_annotations[ann_idx], color_x, color_y)
-        task = overwrite_colors(task, color_x, color_y)
-        data["language"]["ann"].append(ann)
-        data["language"]["task"].append(task)
-        emb = nlp_model(ann).permute(1,0).cpu().numpy()
-        data["language"]["emb"].append(emb)
-
-        start_idx = filename_to_idx(start_fr)
-        end_idx = filename_to_idx(end_fr)
-        data["info"]["indx"].append((start_idx, end_idx))
+            start_idx = filename_to_idx(start_fr)
+            end_idx = filename_to_idx(end_fr)
+            data["info"]["indx"].append((start_idx, end_idx))
 
     # Save lang ann for original data
     root_dir = hydra.utils.get_original_cwd()
