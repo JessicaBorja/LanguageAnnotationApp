@@ -4,10 +4,19 @@ import json
 import os
 from pathlib import Path
 import random
+import logging
+import time
+import threading
 
 import cv2
 import numpy as np
 
+def threaded(fn):
+    def wrapper(*args, **kwargs):
+        thread = threading.Thread(target=fn, args=args, kwargs=kwargs)
+        thread.start()
+        return thread
+    return wrapper
 
 class DataManager:
     def __init__(self, data_root: str, n_frames: int, grip_pt_h: bool = False) -> None:
@@ -20,22 +29,28 @@ class DataManager:
         self.n_frames = n_frames
         self.grip_pt_h = grip_pt_h
         self.n_seq_percentage = 1.0
-        _json_data = self.read_json()
+        
+        _data_filename = self.save_data_dir / "data.json"
+        _json_data = self.read_json(_data_filename)
+        self.video_tags = {}
         if _json_data is None:
             print("Iterating through the dataset to create a new json file...")
             self.data = self.read_data_preprocessed(Path(data_root))
         else:
             self.data = _json_data
-        # self.create_add_videos()
+            for d in self.data:
+                start = self.filename_to_idx(d["indx"][0])
+                end = self.filename_to_idx(d["indx"][1])
+                self.video_tags[(start, end)] = d["video_tag"]
+        self.n_workers = 8
         self._c = 1
 
-    def read_json(self):
-        data_filename = self.save_data_dir / "data.json"
+    def read_json(self, data_filename):
         data = None
         if data_filename.is_file():
             with open(data_filename, "r") as read_file:
                 data = json.load(read_file)
-                print("found json file")
+                print("found json file %s" % data_filename)
         else:
             print("Could not find previous data: %s" % data_filename)
         return data
@@ -45,13 +60,20 @@ class DataManager:
         with open(data_filename, "w") as fout:
             json.dump(data, fout, indent=2)
 
-    def create_tmp_video(self, start, end, dir, id):
-        video_tag = "tmp_%d.webM" % id
-        # if(os.path.isfile(os.path.join(self.tmp_dir, video_tag))):
-        #     return video_tag
+    def check_exists(self, video_name):
+        exists = True
+        for cam in ["static", "gripper"]:
+            folder_path = os.path.join(self.media_dir, "%s_cam" % cam)
+            video_filename = os.path.join(folder_path, video_name)
+            exists and os.path.isfile(video_filename)
+        return exists
 
+    def create_tmp_video(self, start, end, dir):
         start_idx = self.filename_to_idx(start)
         end_idx = self.filename_to_idx(end)
+        video_tag = self.video_tags[(start_idx, end_idx)]
+
+        # Check if exists
         gripper_imgs, static_imgs = [], []
         for i in range(start_idx, end_idx + 1):
             frame_i = self.idx_to_filename(i)
@@ -133,6 +155,13 @@ class DataManager:
         self.save_json(_data)
         return _data
 
+    @threaded
+    def create_videos_threading(self, sequences):
+        for seq_dct in sequences:
+            start, end = seq_dct["indx"]
+            data_dir = seq_dct["dir"]
+            self.create_tmp_video(start, end, data_dir)
+
     def read_data_preprocessed(self, play_data_path):
         """
         play_data_path -> day -> time
@@ -143,59 +172,44 @@ class DataManager:
         """
         # Get all posible initial_frames
         initial_frames = []
-        ep_start_end_ids = np.load(play_data_path / "ep_start_end_ids.npy").tolist()
+        _data_filename = play_data_path/"split.json"
+        if os.path.isfile(_data_filename):
+            ep_start_end_ids = self.read_json(_data_filename)
+            ep_start_end_ids = [*ep_start_end_ids["training"], *ep_start_end_ids["validation"]]
+        else:
+            ep_start_end_ids = np.load(play_data_path / "ep_start_end_ids.npy").tolist()
         # iterate over each episode
         for ep in ep_start_end_ids:
             indices = list(range(ep[0], ep[1] - self.n_frames, self.n_frames // 3))
             # Select n_seq random sequences
-            rand_seqs = sorted(random.sample(indices, round(len(indices) * self.n_seq_percentage)))
+            rand_seqs = random.sample(indices, round(len(indices) * self.n_seq_percentage))
             initial_frames.extend(rand_seqs)
 
         frames_info = {}
         _data = []
-        for start_id in initial_frames:
-            start_filename = self.idx_to_filename(start_id)
-            end_frame_idx = start_id + self.n_frames
-            end_filename = self.idx_to_filename(end_frame_idx)
+        for seq_id, start_idx in enumerate(initial_frames):
+            start_filename = self.idx_to_filename(start_idx)
+            end_idx = start_idx + self.n_frames
+            end_filename = self.idx_to_filename(end_idx)
+            video_tag = "tmp_%d.webM" % seq_id
             frames_info = {
                 "indx": [start_filename, end_filename],
                 "dir": str(play_data_path),
                 "n_frames": self.n_frames,
+                "video_tag": video_tag
             }
-            _data.append(frames_info)
-        self.save_json(_data)
-        return _data
+            if (start_idx, end_idx) not in self.video_tags:
+                _data.append(frames_info)
+                self.video_tags[(start_idx, end_idx)] = video_tag
 
-    def read_data_preprocessed_heuristic(self, play_data_path):
-        """
-        play_data_path -> day -> time
-        _data:(list)
-            - {'indx': [start_filename, end_filename],
-               'dir': directory of previous files,
-               'n_frames': end_frame - start_frame}
-        """
-        # Get all posible initial_frames
-        initial_frames = []
-        ep_start_end_ids = np.load(play_data_path / "ep_start_end_ids.npy").tolist()
-        # iterate over each episode
-        for ep in ep_start_end_ids:
-            indices = list(range(ep[0], ep[1] - self.n_frames, self.n_frames // 2))
-            # Select n_seq random sequences
-            rand_seqs = sorted(random.sample(indices, round(len(indices) * self.n_seq_percentage)))
-            initial_frames.extend(rand_seqs)
-
-        frames_info = {}
-        _data = []
-        for start_id in initial_frames:
-            start_filename = self.idx_to_filename(start_id)
-            end_frame_idx = start_id + self.n_frames
-            end_filename = self.idx_to_filename(end_frame_idx)
-            frames_info = {
-                "indx": [start_filename, end_filename],
-                "dir": str(play_data_path),
-                "n_frames": self.n_frames,
-            }
-            _data.append(frames_info)
+        logging.info("Starting workers")
+        if len(_data) > self.n_workers:
+            data_indices = np.array_split(np.arange(len(_data)), self.n_workers)
+        else:
+            data_indices = np.expand_dims(np.arange(len(_data)), -1)
+        for indices in data_indices:
+            sequences = [_data[i] for i in indices]
+            self.create_videos_threading(sequences)
         self.save_json(_data)
         return _data
 

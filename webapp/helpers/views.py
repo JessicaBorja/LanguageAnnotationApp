@@ -10,12 +10,6 @@ from .models import LangAnn, Sequences
 
 views = Blueprint("views", __name__)  # set up blueprint
 
-
-def get_sequences():
-
-    return data_manager.data
-
-
 @views.route("/", methods=["GET", "POST"])
 @login_required
 def home():
@@ -23,10 +17,16 @@ def home():
         return redirect(url_for("annotator.annotate", user=current_user))
     else:
         if Sequences.query.count() < 1:
-            data = get_sequences()
+            data = data_manager.data
             for info in data:
                 start, end = info["indx"][:2]
-                new_data_point = Sequences(dir=info["dir"], n_frames=info["n_frames"], start_frame=start, end_frame=end)
+                start = data_manager.filename_to_idx(start)
+                end = data_manager.filename_to_idx(end)
+                new_data_point = Sequences(dir=info["dir"],
+                                           n_frames=info["n_frames"],
+                                           start_frame=start,
+                                           end_frame=end,
+                                           video_tag=data_manager.video_tags[(start,end)])
                 db.session.add(new_data_point)
             db.session.commit()
         return render_template("home.html", user=current_user)

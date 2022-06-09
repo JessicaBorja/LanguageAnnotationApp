@@ -61,7 +61,9 @@ def annotate():
     if seq is None:
         return redirect(url_for("views.completed"))
     progress = float(LangAnn.query.count()) / float(Sequences.query.count()) * 100
-    filename = data_manager.create_tmp_video(seq.start_frame, seq.end_frame, seq.dir, seq_id)
+    filename = data_manager.video_tags[int(seq.start_frame), int(seq.end_frame)]
+    if not data_manager.check_exists(filename):
+        filename = data_manager.create_tmp_video(seq.start_frame, seq.end_frame, seq.dir)
     return render_template(
         "annotate.html", content=filename, progress=progress, tasks=tasks, colors=colors, user=current_user
     )

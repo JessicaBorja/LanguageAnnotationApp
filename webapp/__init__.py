@@ -37,8 +37,8 @@ def read_colors():
 # Loading videos from
 tasks = read_tasks()
 colors = read_colors()
-data_path = "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/tabletop"
-data_manager = DataManager(data_path, n_frames=128, grip_pt_h=False)
+data_path = "/var/www/LanguageAnnotationApp/block_drawer_play_filt_15hz"
+data_manager = DataManager(data_path, n_frames=64, grip_pt_h=False)
 
 
 def create_app():

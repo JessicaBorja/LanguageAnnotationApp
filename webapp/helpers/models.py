@@ -16,6 +16,7 @@ class Sequences(db.Model):
     n_frames = db.Column(db.Integer)
     start_frame = db.Column(db.String(50))
     end_frame = db.Column(db.String(50))
+    video_tag = db.Column(db.String(50))
 
 
 class LangAnn(db.Model):
