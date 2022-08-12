@@ -114,7 +114,7 @@ class DataManager:
         return int(filename.split("_")[-1][:-4])
 
     def idx_to_filename(self, idx):
-        return "episode_%06d.npz" % idx
+        return "episode_%07d.npz" % idx
 
     def read_data_unprocessed(self, play_data_path):
         """
