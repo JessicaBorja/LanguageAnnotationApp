@@ -37,7 +37,7 @@ def read_colors():
 # Loading videos from
 tasks = read_tasks()
 colors = read_colors()
-data_path = "/var/www/LanguageAnnotationApp/block_drawer_play_filt_15hz"
+data_path = "/var/www/LanguageAnnotationApp/500k_all_tasks_dataset_15hz"
 data_manager = DataManager(data_path, n_frames=64, grip_pt_h=False)
 
 
