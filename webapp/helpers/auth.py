@@ -32,8 +32,6 @@ def login():
 @auth.route("/logout")
 @login_required
 def logout():
-    annotation_in_progress = LangAnn.query.filter_by(annotation="")
-    annotation_in_progress.filter_by(user_id=current_user.id).delete()
     db.session.commit()
     logout_user()
     return redirect(url_for("auth.login"))
