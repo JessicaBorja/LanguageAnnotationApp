@@ -29,8 +29,10 @@ class DataManager:
         self.n_frames = n_frames
         self.grip_pt_h = grip_pt_h
         self.n_seq_percentage = 1.0
-        
+        self.n_workers = 8
+        self._c = 1
         _data_filename = self.save_data_dir / "data.json"
+        print("checking if file exists...", _data_filename)
         _json_data = self.read_json(_data_filename)
         self.video_tags = {}
         if _json_data is None:
@@ -42,8 +44,6 @@ class DataManager:
                 start = self.filename_to_idx(d["indx"][0])
                 end = self.filename_to_idx(d["indx"][1])
                 self.video_tags[(start, end)] = d["video_tag"]
-        self.n_workers = 8
-        self._c = 1
 
     def read_json(self, data_filename):
         data = None
@@ -114,7 +114,7 @@ class DataManager:
         return int(filename.split("_")[-1][:-4])
 
     def idx_to_filename(self, idx):
-        return "episode_%06d.npz" % idx
+        return "episode_%07d.npz" % idx
 
     def read_data_unprocessed(self, play_data_path):
         """
