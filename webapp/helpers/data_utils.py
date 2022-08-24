@@ -187,6 +187,8 @@ class DataManager:
 
         frames_info = {}
         _data = []
+        # shuffle sequences from every episode
+        initial_frames.shuffle()
         for seq_id, start_idx in enumerate(initial_frames):
             start_filename = self.idx_to_filename(start_idx)
             end_idx = start_idx + self.n_frames
