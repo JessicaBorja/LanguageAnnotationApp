@@ -56,4 +56,4 @@ push_[x]_block_in_drawer:
   - "push the [x] block inside the drawer"
 
 stack_[x]_on_[y]:
-  - "Stack the [x] block on top of the y block"
+  - "Stack the [x] block on top of the [y] block"

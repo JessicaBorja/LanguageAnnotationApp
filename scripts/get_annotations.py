@@ -116,6 +116,10 @@ def main(cfg):
     # Get database connection
     db_path = hydra.utils.get_original_cwd()
     db_file = os.path.join(db_path, cfg.database_path)
+
+    # If database is somewhere else, please modify
+    # db_file = "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/database.db"
+
     conn = create_connection(db_file)
     # Load annotations
     task_annotations = read_tasks()
@@ -132,10 +136,15 @@ def main(cfg):
             data["language"]["task"].append(task)
             emb = nlp_model(ann).permute(1,0).cpu().numpy()
             data["language"]["emb"].append(emb)
+        else:
+            # No task
+            data["language"]["ann"].append(task)
+            data["language"]["task"].append(task)
+            data["language"]["emb"].append(np.zeros(5))
 
-            start_idx = filename_to_idx(start_fr)
-            end_idx = filename_to_idx(end_fr)
-            data["info"]["indx"].append((start_idx, end_idx))
+        start_idx = int(start_fr)
+        end_idx = int(end_fr)
+        data["info"]["indx"].append((start_idx, end_idx))
 
     # Save lang ann for original data
     root_dir = hydra.utils.get_original_cwd()
@@ -148,16 +157,16 @@ def main(cfg):
     np.save(save_file, data)
 
     # Downsampling: save lang ann
-    dirs = ["15hz", "15hz_repeated"]
-    reduce_methods = [reduce_15hz, reduce_15hz_repeated]
-    for folder, reduce_method in zip(dirs, reduce_methods):
-        reduced_data = reduce_method(data, cfg)
-        save_folder = os.path.join(save_path, folder)
-        # Specific
-        save_folder = os.path.join(save_folder, nlp_model.name)
-        os.makedirs(save_folder, exist_ok=True)
-        save_file = os.path.join(save_folder, "auto_lang_ann.npy")
-        np.save(save_file, reduced_data)
+    # dirs = ["15hz", "15hz_repeated"]
+    # reduce_methods = [reduce_15hz, reduce_15hz_repeated]
+    # for folder, reduce_method in zip(dirs, reduce_methods):
+    #     reduced_data = reduce_method(data, cfg)
+    #     save_folder = os.path.join(save_path, folder)
+    #     # Specific
+    #     save_folder = os.path.join(save_folder, nlp_model.name)
+    #     os.makedirs(save_folder, exist_ok=True)
+    #     save_file = os.path.join(save_folder, "auto_lang_ann.npy")
+    #     np.save(save_file, reduced_data)
 
 
 if __name__ == "__main__":
