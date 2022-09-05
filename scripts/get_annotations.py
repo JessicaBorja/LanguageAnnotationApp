@@ -136,15 +136,14 @@ def main(cfg):
             data["language"]["task"].append(task)
             emb = nlp_model(ann).permute(1,0).cpu().numpy()
             data["language"]["emb"].append(emb)
-        else:
+        #else:
             # No task
-            data["language"]["ann"].append(task)
-            data["language"]["task"].append(task)
-            data["language"]["emb"].append(np.zeros(5))
-
-        start_idx = int(start_fr)
-        end_idx = int(end_fr)
-        data["info"]["indx"].append((start_idx, end_idx))
+        #    data["language"]["ann"].append(task)
+        #    data["language"]["task"].append(task)
+        #    data["language"]["emb"].append(np.zeros(5))
+            start_idx = int(start_fr)
+            end_idx = int(end_fr)
+            data["info"]["indx"].append((start_idx, end_idx))
 
     # Save lang ann for original data
     root_dir = hydra.utils.get_original_cwd()
