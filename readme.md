@@ -29,7 +29,7 @@ To change the language encoder to compute the embeddings use the flag "lang_mode
 
 # Visualizing the annotations 
 [viz_annotations.py](./scripts/viz_annotations.py)
-Please modify the database directory and the 
+Please modify the database directory and the desired indices to visualize in the file.
 ```
-python get_annotations.py
+python viz_annotations.py
 ```
