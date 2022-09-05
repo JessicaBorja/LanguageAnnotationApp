@@ -28,7 +28,7 @@ def main():
     lang_ann_path = Path(__file__).resolve().parents[1] / "annotations" / "lang_paraphrase-MiniLM-L3-v2" / "auto_lang_ann.npy"
     
     # Path where dataset is
-    dataset_path = "/mnt/ssd_shared/Users/Jessica/Documents/Thesis_ssd/datasets/unprocessed/real_world/500k_all_tasks_dataset_15hz"
+    dataset_path = "/var/www/LanguageAnnotationApp/500k_all_tasks_dataset_15hz"
 
     annotations = np.load(lang_ann_path.resolve(), allow_pickle=True).item()
     indices = [317, 723, 22]
