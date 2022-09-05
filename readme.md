@@ -11,7 +11,7 @@ In the source directory type:
 
 Run:
 ```
-python get_annotations.py
+python scripts/get_annotations.py
 ```
 
 The configuration file is in [./scripts/config/retrieve_data.yaml](./scripts/config/retrieve_data.yaml)
