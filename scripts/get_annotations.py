@@ -136,15 +136,19 @@ def main(cfg):
             data["language"]["task"].append(task)
             emb = nlp_model(ann).permute(1,0).cpu().numpy()
             data["language"]["emb"].append(emb)
-        #else:
+        else:
             # No task
-        #    data["language"]["ann"].append(task)
-        #    data["language"]["task"].append(task)
-        #    data["language"]["emb"].append(np.zeros(5))
-            start_idx = int(start_fr)
-            end_idx = int(end_fr)
-            data["info"]["indx"].append((start_idx, end_idx))
-
+            if "open_drawer" in task or "close_drawer" in task \
+                    or "move_slide_left" in task or "move_slide_left" in task:
+                posible_annotations = task_annotations[task]
+                ann_idx = np.random.randint(len(posible_annotations))
+                data["language"]["ann"].append(posible_annotations[ann_idx])
+                data["language"]["task"].append(task)
+                emb = nlp_model(ann).permute(1, 0).cpu().numpy()
+                data["language"]["emb"].append(emb)
+            #start_idx = int(start_fr)
+            #end_idx = int(end_fr)
+            #data["info"]["indx"].append((start_idx, end_idx))
     # Save lang ann for original data
     root_dir = hydra.utils.get_original_cwd()
     save_path = os.path.join(root_dir, cfg.save_path)
