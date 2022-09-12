@@ -12,9 +12,10 @@ db = SQLAlchemy()
 DB_NAME = "database.db"
 
 
-def read_tasks():
+def read_tasks(task_file):
+    print("task_file: ", task_file)
     file_dir = pathlib.Path(__file__).parent.resolve()
-    file = file_dir / "helpers/tasks.yaml"
+    file = file_dir / ("helpers/"+task_file+".yaml")
     with open(file.as_posix(), "r") as stream:
         try:
             tasks = yaml.safe_load(stream)
@@ -35,7 +36,7 @@ def read_colors():
 
 
 # Loading videos from
-tasks = read_tasks()
+tasks = read_tasks("tasks")
 colors = read_colors()
 data_path = "/var/www/LanguageAnnotationApp/500k_all_tasks_dataset_15hz"
 data_manager = DataManager(data_path, n_frames=64, grip_pt_h=False)

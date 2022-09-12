@@ -122,7 +122,7 @@ def main(cfg):
 
     conn = create_connection(db_file)
     # Load annotations
-    task_annotations = read_tasks()
+    task_annotations = read_tasks(cfg.task_cfg)
 
     # Get database data
     rows = get_annotations(conn, cfg.ignore_empty_tasks)

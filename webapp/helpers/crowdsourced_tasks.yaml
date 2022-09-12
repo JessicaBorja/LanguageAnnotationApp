@@ -65,7 +65,7 @@ turn_on_[x]_led: [ "turn on the [x] light",
 turn_off_[x]_led: [ "turn off the [x] light",
                    "turn off the [x] led light",
                    "turn off the [x] light lamp",
-                   "switch off the [x] light"
+                   "switch off the [x] light",
                    "move the [x] light switch to turn off the [x] light",
                    "toggle the [x] light switch to turn off the [x] light",
                    "push down the [x] button to turn off the [x] light",
