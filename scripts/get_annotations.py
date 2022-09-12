@@ -136,6 +136,9 @@ def main(cfg):
             data["language"]["task"].append(task)
             emb = nlp_model(ann).permute(1,0).cpu().numpy()
             data["language"]["emb"].append(emb)
+            start_idx = int(start_fr)
+            end_idx = int(end_fr)
+            data["info"]["indx"].append((start_idx, end_idx))
         else:
             # No task
             if "open_drawer" in task or "close_drawer" in task \
@@ -146,9 +149,9 @@ def main(cfg):
                 data["language"]["task"].append(task)
                 emb = nlp_model(ann).permute(1, 0).cpu().numpy()
                 data["language"]["emb"].append(emb)
-            #start_idx = int(start_fr)
-            #end_idx = int(end_fr)
-            #data["info"]["indx"].append((start_idx, end_idx))
+                start_idx = int(start_fr)
+                end_idx = int(end_fr)
+                data["info"]["indx"].append((start_idx, end_idx))
     # Save lang ann for original data
     root_dir = hydra.utils.get_original_cwd()
     save_path = os.path.join(root_dir, cfg.save_path)
